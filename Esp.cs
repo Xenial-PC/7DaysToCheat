@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace _7DaysToCheat
@@ -16,7 +16,7 @@ namespace _7DaysToCheat
             ZWrite = Shader.PropertyToID("_ZWrite");
 
         public static Material MakeLinesMat()
-		{
+	{
             if (LineMaterial != null) return LineMaterial; // makes sure the line material has been reset
 
             LineMaterial = new Material(Shader.Find("Hidden/Internal-Colored")) // creates a new Material with the flags of where the shader is Hidden/Internal-Colored
@@ -31,20 +31,20 @@ namespace _7DaysToCheat
             LineMaterial.SetInt(ZWrite, 0);
 
             return LineMaterial;
-		}
+	}
 
         public static void MakeLines(Vector3 vs0, Vector3 vs2, Color color)
-		{
+	{
             MakeLinesMat().SetPass(0);
 
             GL.Begin(1);
-			GL.Color(color);
+	    GL.Color(color);
 
-			GL.Vertex3(vs0.x, vs0.y, 0f);
-			GL.Vertex3(vs2.x, vs2.y, 0f);
+	    GL.Vertex3(vs0.x, vs0.y, 0f);
+	    GL.Vertex3(vs2.x, vs2.y, 0f);
 
-			GL.End();
-		}
+	    GL.End();
+	}
 
         public void OnGUI()
         {
