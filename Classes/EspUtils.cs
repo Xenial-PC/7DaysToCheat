@@ -1,35 +1,40 @@
 ﻿using System;
 using UnityEngine;
+using UnityEditor;
 
 namespace _7DaysToCheat.Classes
 {
     static class EspUtils
     {
         // This is not my class its from another UnityCheat awhile back just modified so all credits go to them not me
-        private static Texture2D drawingTex;
-        private static Texture2D whiteTexture;
+        private static Texture2D _drawingTex;
+        private static Texture2D _whiteTexture;
 
         private static Color _lastTexColor;
 
-        private static Material drawMaterial;
+        private static Material _drawMaterial;
+        static float theta_scale = 0.01f;        //Set lower to add more points
+        static int size; //Total number of points in circle
+        static float radius = 3f;
+        static LineRenderer lineRenderer;
 
         private static GUIStyle __style = new GUIStyle();
         private static GUIStyle __outlineStyle = new GUIStyle();
 
         static EspUtils()
         {
-            whiteTexture = Texture2D.whiteTexture;
-            drawingTex = new Texture2D(1, 1);
+            _whiteTexture = Texture2D.whiteTexture;
+            _drawingTex = new Texture2D(1, 1);
 
-            drawMaterial = new Material(Shader.Find("Hidden/Internal-Colored"))
+            _drawMaterial = new Material(Shader.Find("Hidden/Internal-Colored"))
             {
                 hideFlags = (HideFlags)61
             };
 
-            drawMaterial.SetInt("_SrcBlend", 5);
-            drawMaterial.SetInt("_DstBlend", 10);
-            drawMaterial.SetInt("_Cull", 0);
-            drawMaterial.SetInt("_ZWrite", 0);
+            _drawMaterial.SetInt("_SrcBlend", 5);
+            _drawMaterial.SetInt("_DstBlend", 10);
+            _drawMaterial.SetInt("_Cull", 0);
+            _drawMaterial.SetInt("_ZWrite", 0);
         }
 
         public static Color GetHealthColor(float health, float maxHealth)
@@ -51,7 +56,7 @@ namespace _7DaysToCheat.Classes
         {
             GL.PushMatrix();
 
-            if (!drawMaterial.SetPass(0))
+            if (!_drawMaterial.SetPass(0))
             {
                 GL.PopMatrix();
                 return;
@@ -68,6 +73,13 @@ namespace _7DaysToCheat.Classes
 
             GL.End();
             GL.PopMatrix();
+        }
+
+        public static void DrawCircleFilled(Color col, Vector2 pos, Vector2 radious)
+        {
+            GUI.color = col;
+            var a = Resources.Load<Texture2D>(@"Resources\unity_builtin_extra\Knob");
+            GUI.DrawTexture(new Rect(pos, radious), a);
         }
 
         public static void DrawLine(Vector2 start, Vector2 end, Color color, float width)
@@ -96,10 +108,10 @@ namespace _7DaysToCheat.Classes
             var oldColor = GUI.color;
             GUI.color = color;
 
-            GUI.DrawTexture(new Rect(pos.x, pos.y, width, size.y), whiteTexture);
-            GUI.DrawTexture(new Rect(pos.x + size.x, pos.y, width, size.y), whiteTexture);
-            GUI.DrawTexture(new Rect(pos.x, pos.y, size.x, width), whiteTexture);
-            GUI.DrawTexture(new Rect(pos.x, pos.y + size.y, size.x, width), whiteTexture);
+            GUI.DrawTexture(new Rect(pos.x, pos.y, width, size.y), _whiteTexture);
+            GUI.DrawTexture(new Rect(pos.x + size.x, pos.y, width, size.y), _whiteTexture);
+            GUI.DrawTexture(new Rect(pos.x, pos.y, size.x, width), _whiteTexture);
+            GUI.DrawTexture(new Rect(pos.x, pos.y + size.y, size.x, width), _whiteTexture);
 
             GUI.color = oldColor;
         }
@@ -155,13 +167,13 @@ namespace _7DaysToCheat.Classes
         {
             if (color != _lastTexColor)
             {
-                drawingTex.SetPixel(0, 0, color);
-                drawingTex.Apply();
+                _drawingTex.SetPixel(0, 0, color);
+                _drawingTex.Apply();
 
                 _lastTexColor = color;
             }
 
-            GUI.DrawTexture(new Rect(x, y, width, height), drawingTex);
+            GUI.DrawTexture(new Rect(x, y, width, height), _drawingTex);
         }
 
         public static void DrawString(Vector2 pos, string text, Color color, bool center = true, int size = 12, FontStyle fontStyle = FontStyle.Bold, int depth = 1)

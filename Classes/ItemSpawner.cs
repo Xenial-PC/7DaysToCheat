@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace _7DaysToCheat.Classes
 {
@@ -18,24 +19,22 @@ namespace _7DaysToCheat.Classes
 
         public static void SpawnItem()
         {
-            var itemName = Overlay.GetInstance().ItemNameTextBox.Text;
+            var itemName = Overlay.GetInstance().ItemNameComboBox.Text;
             if (string.IsNullOrEmpty(itemName))
             {
                 MessageBox.Show(@"ItemName TexBox Is Empty");
                 return;
             }
-            var newItem = ItemClass.GetItem(itemName, false);
+            var newItem = ItemClass.GetItem(itemName);
 
-            var itemQuality = Overlay.GetInstance().ItemQualityTextBox.Text;
-            if (string.IsNullOrEmpty(itemQuality)) itemQuality = newItem.Quality.ToString();
+            var itemQuality = Overlay.GetInstance().ItemQualityNumberBox.Value;
             var itemQualityConverted = Convert.ToInt32(itemQuality);
 
-            var itemAmount = Overlay.GetInstance().ItemAmountTextBox.Text;
-            var itemAmountConverted = 1;
-            if (string.IsNullOrEmpty(itemAmount)) itemAmountConverted = 1;
-            else itemAmountConverted = Convert.ToInt32(Overlay.GetInstance().ItemAmountTextBox.Text);
+            newItem.Quality = itemQualityConverted;
 
-            var itemStack = new ItemStack(new ItemValue(newItem.type, itemQualityConverted, itemQualityConverted, true, null, 1f), itemAmountConverted);
+            var itemAmount = Overlay.GetInstance().ItemAmountTextBox.Text;
+            var itemAmountConverted = string.IsNullOrEmpty(itemAmount) ? 1 : Convert.ToInt32(Overlay.GetInstance().ItemAmountTextBox.Text);
+            var itemStack = new ItemStack(newItem, itemAmountConverted);
 
             if (!Overlay.GetInstance().SpawnItemsAboveHeadCheckBox.Checked)
             {
@@ -43,7 +42,6 @@ namespace _7DaysToCheat.Classes
                 return;
             }
             GameManager.Instance.World.gameManager.ItemDropServer(itemStack, new Vector3(0, 2, 0), new Vector3(0, 0), Main.LocalPlayerEntity.entityId, 60F, true);
-            //GameManager.Instance.adminTools.AddAdmin();
         }
     }
 }

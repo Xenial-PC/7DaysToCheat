@@ -86,6 +86,11 @@ namespace _7DaysToCheat.Classes
                 Destroy(AimbotGameObject);
             }
 
+            if (Input.GetKeyDown(KeyCode.RightAlt))
+            {
+                LocalPlayerEntity.IsAdmin = true;
+            }
+
             if (Input.GetKeyDown(KeyCode.Home))
             {
                 _isEspEnabled = !_isEspEnabled;

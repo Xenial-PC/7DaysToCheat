@@ -328,6 +328,7 @@
     <Compile Include="Classes\CreateMenu.cs" />
     <Compile Include="Classes\EspUtils.cs" />
     <Compile Include="Classes\FreeCraft.cs" />
+    <Compile Include="Classes\GetAllItems.cs" />
     <Compile Include="Classes\SceneDebugger.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Classes\Main.cs" />

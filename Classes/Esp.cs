@@ -16,6 +16,7 @@ namespace _7DaysToCheat.Classes
         private int _Color;
         private Material _chamsMaterial;
         private float _lastChamTime;
+        private CanvasGroup _radarGroup;
 
         public void Awake()
         {
@@ -53,11 +54,12 @@ namespace _7DaysToCheat.Classes
 
             if (radarEnabled)
             {
-                EspUtils.RectFilled(0, 0, 200, 200, Color.black);
-
-                EspUtils.DrawLine(new Vector2(100, 0), new Vector2(100, 200), Color.white, 5);
-                EspUtils.DrawLine(new Vector2(0, 100), new Vector2(200, 100), Color.white, 5);
-                EspUtils.OutlineBox(new Vector2(0, 0), new Vector2(200, 200), Color.red, 5);
+                var lineColor = new Color(54 / 255f, 69 / 255f, 79 / 255f, 0.8f);
+                EspUtils.RectFilled(0, 0, 200, 200, new Color(0, 0, 0, 0.8f));
+                 
+                EspUtils.DrawLine(new Vector2(100, 0), new Vector2(100, 200), lineColor, 3);
+                EspUtils.DrawLine(new Vector2(0, 100), new Vector2(200, 100), lineColor, 3);
+                EspUtils.OutlineBox(new Vector2(0, 0), new Vector2(200, 200), new Color(255, 0, 0, 0.8f), 5);
                 
                 EspUtils.RectFilled(95, 95, 10, 10, Color.green);
             }
@@ -150,6 +152,9 @@ namespace _7DaysToCheat.Classes
                     var vector = _camera.WorldToScreenPoint(entityPlayer.transform.position);
 
                     var headPoint = _camera.WorldToScreenPoint(entityPlayer.emodel.GetHeadTransform().position);
+
+                    entityPlayer.IsFriendOfLocalPlayer = true;
+                    entityPlayer.IsInPartyOfLocalPlayer = true;
 
                     if (radarEnabled)
                     {

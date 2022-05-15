@@ -96,6 +96,8 @@ namespace _7DaysToCheat
             _overlayThread.Start();
 
             InitializeMenus();
+
+            ItemNameComboBox.Items.AddRange(GetAllItems.GetAllCurrentItems().ToArray());
         }
 
         private void InitializeMenus()
