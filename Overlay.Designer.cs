@@ -74,9 +74,9 @@ namespace _7DaysToCheat
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.ItemNameComboBox);
             this.panel1.Controls.Add(this.ItemQualityNumberBox);
             this.panel1.Controls.Add(this.ItemNameLabel);
-            this.panel1.Controls.Add(this.ItemNameComboBox);
             this.panel1.Controls.Add(this.SpawnItemsAboveHeadCheckBox);
             this.panel1.Controls.Add(this.SpawnItemButton);
             this.panel1.Controls.Add(this.SpawnItemsAboveHeadLabel);
@@ -346,7 +346,7 @@ namespace _7DaysToCheat
             // 
             this.ItemNameLabel.AutoSize = true;
             this.ItemNameLabel.ForeColor = System.Drawing.Color.White;
-            this.ItemNameLabel.Location = new System.Drawing.Point(3, 19);
+            this.ItemNameLabel.Location = new System.Drawing.Point(3, 17);
             this.ItemNameLabel.Name = "ItemNameLabel";
             this.ItemNameLabel.Size = new System.Drawing.Size(58, 13);
             this.ItemNameLabel.TabIndex = 18;
