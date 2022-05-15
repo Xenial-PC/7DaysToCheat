@@ -1,0 +1,145 @@
+gunHandgunT1Pistol: SpreadDegreesVertical:1.5
+gunHandgunT1Pistol: SpreadDegreesHorizontal:1.5
+gunHandgunT1Pistol: KickDegreesVerticalMin:0.7
+gunHandgunT1Pistol: KickDegreesVerticalMax:0.8
+gunHandgunT1Pistol: KickDegreesHorizontalMin:-0.25
+gunHandgunT1Pistol: KickDegreesHorizontalMax:0.25
+
+gunHandgunT3SMG5: SpreadDegreesVertical:1.35
+gunHandgunT3SMG5: SpreadDegreesHorizontal:1.35
+gunHandgunT3SMG5: KickDegreesVerticalMin:0.5
+gunHandgunT3SMG5: KickDegreesVerticalMax:1
+gunHandgunT3SMG5: KickDegreesHorizontalMin:-0.3
+gunHandgunT3SMG5: KickDegreesHorizontalMax:0.3
+
+gunHandgunT2Magnum44: SpreadDegreesVertical:1.3
+gunHandgunT2Magnum44: SpreadDegreesHorizontal:1.3
+gunHandgunT2Magnum44: KickDegreesVerticalMin:4.5
+gunHandgunT2Magnum44: KickDegreesVerticalMax:5
+gunHandgunT2Magnum44: KickDegreesHorizontalMin:-0.3
+gunHandgunT2Magnum44: KickDegreesHorizontalMax:0.15
+
+gunHandgunT3DesertVulture: SpreadDegreesVertical:1.3
+gunHandgunT3DesertVulture: SpreadDegreesHorizontal:1.3
+gunHandgunT3DesertVulture: KickDegreesVerticalMin:3.5
+gunHandgunT3DesertVulture: KickDegreesVerticalMax:4
+gunHandgunT3DesertVulture: KickDegreesHorizontalMin:-0.3
+gunHandgunT3DesertVulture: KickDegreesHorizontalMax:0.15
+
+gunShotgunT0Blunderbuss: SpreadDegreesVertical:5.5
+gunShotgunT0Blunderbuss: SpreadDegreesHorizontal:5.5
+gunShotgunT0Blunderbuss: KickDegreesVerticalMin:8
+gunShotgunT0Blunderbuss: KickDegreesVerticalMax:8
+gunShotgunT0Blunderbuss: KickDegreesHorizontalMin:-4
+gunShotgunT0Blunderbuss: KickDegreesHorizontalMax:4
+
+gunShotgunT1DoubleBarrel: KickDegreesVerticalMin:4.2
+gunShotgunT1DoubleBarrel: KickDegreesVerticalMax:4.2
+gunShotgunT1DoubleBarrel: KickDegreesHorizontalMin:-2.5
+gunShotgunT1DoubleBarrel: KickDegreesHorizontalMax:2.5
+
+gunShotgunT2PumpShotgun: KickDegreesVerticalMin:4.2
+gunShotgunT2PumpShotgun: KickDegreesVerticalMax:4.2
+gunShotgunT2PumpShotgun: KickDegreesHorizontalMin:-2.5
+gunShotgunT2PumpShotgun: KickDegreesHorizontalMax:2.5
+
+gunShotgunT3AutoShotgun: KickDegreesVerticalMin:4.2
+gunShotgunT3AutoShotgun: KickDegreesVerticalMax:4.2
+gunShotgunT3AutoShotgun: KickDegreesHorizontalMin:-2.5
+gunShotgunT3AutoShotgun: KickDegreesHorizontalMax:2.5
+
+gunRifleT1HuntingRifle: SpreadDegreesVertical:5
+gunRifleT1HuntingRifle: SpreadDegreesHorizontal:5
+gunRifleT1HuntingRifle: KickDegreesVerticalMin:0.5
+gunRifleT1HuntingRifle: KickDegreesVerticalMax:2
+gunRifleT1HuntingRifle: KickDegreesHorizontalMin:-0.35
+gunRifleT1HuntingRifle: KickDegreesHorizontalMax:0.35
+
+gunRifleT2MarksmanRifle: SpreadDegreesVertical:6
+gunRifleT2MarksmanRifle: SpreadDegreesHorizontal:6
+gunRifleT2MarksmanRifle: KickDegreesVerticalMin:1.5
+gunRifleT2MarksmanRifle: KickDegreesVerticalMax:3
+gunRifleT2MarksmanRifle: KickDegreesHorizontalMin:-0.2
+gunRifleT2MarksmanRifle: KickDegreesHorizontalMax:0.2
+
+gunRifleT3SniperRifle: SpreadDegreesVertical:6
+gunRifleT3SniperRifle: SpreadDegreesHorizontal:6
+gunRifleT3SniperRifle: KickDegreesVerticalMin:1.5
+gunRifleT3SniperRifle: KickDegreesVerticalMax:3
+gunRifleT3SniperRifle: KickDegreesHorizontalMin:-0.2
+gunRifleT3SniperRifle: KickDegreesHorizontalMax:0.2
+
+gunMGT1AK47: SpreadDegreesVertical:2.8
+gunMGT1AK47: SpreadDegreesHorizontal:2.8
+gunMGT1AK47: KickDegreesVerticalMin:-0.5
+gunMGT1AK47: KickDegreesVerticalMax:1
+gunMGT1AK47: KickDegreesHorizontalMin:-1
+gunMGT1AK47: KickDegreesHorizontalMax:1
+
+gunMGT2TacticalAR: SpreadDegreesVertical:2.8
+gunMGT2TacticalAR: SpreadDegreesHorizontal:2.8
+gunMGT2TacticalAR: KickDegreesVerticalMin:-0.5
+gunMGT2TacticalAR: KickDegreesVerticalMax:1
+gunMGT2TacticalAR: KickDegreesHorizontalMin:-1
+gunMGT2TacticalAR: KickDegreesHorizontalMax:1
+
+gunMGT3M60: SpreadDegreesVertical:2.8
+gunMGT3M60: SpreadDegreesHorizontal:2.8
+gunMGT3M60: KickDegreesVerticalMin:-0.4
+gunMGT3M60: KickDegreesVerticalMax:1.1
+gunMGT3M60: KickDegreesHorizontalMin:-1
+gunMGT3M60: KickDegreesHorizontalMax:1
+
+gunExplosivesT3RocketLauncher: SpreadDegreesVertical:7
+gunExplosivesT3RocketLauncher: SpreadDegreesHorizontal:7
+gunExplosivesT3RocketLauncher: KickDegreesVerticalMin:10
+gunExplosivesT3RocketLauncher: KickDegreesVerticalMax:10
+gunExplosivesT3RocketLauncher: KickDegreesHorizontalMin:-0.5
+gunExplosivesT3RocketLauncher: KickDegreesHorizontalMax:0.5
+
+gunBowT0PrimitiveBow: SpreadDegreesVertical:2.8
+gunBowT0PrimitiveBow: SpreadDegreesHorizontal:2.8
+gunBowT0PrimitiveBow: KickDegreesVerticalMin:2
+gunBowT0PrimitiveBow: KickDegreesVerticalMax:2
+gunBowT0PrimitiveBow: KickDegreesHorizontalMin:-1
+gunBowT0PrimitiveBow: KickDegreesHorizontalMax:1
+
+gunBowT1WoodenBow: SpreadDegreesVertical:2.8
+gunBowT1WoodenBow: SpreadDegreesHorizontal:2.8
+gunBowT1WoodenBow: KickDegreesVerticalMin:2
+gunBowT1WoodenBow: KickDegreesVerticalMax:2
+gunBowT1WoodenBow: KickDegreesHorizontalMin:-1
+gunBowT1WoodenBow: KickDegreesHorizontalMax:1
+
+gunBowT3CompoundBow: SpreadDegreesVertical:2.67
+gunBowT3CompoundBow: SpreadDegreesHorizontal:2.67
+gunBowT3CompoundBow: KickDegreesVerticalMin:2
+gunBowT3CompoundBow: KickDegreesVerticalMax:2
+gunBowT3CompoundBow: KickDegreesHorizontalMin:-1
+gunBowT3CompoundBow: KickDegreesHorizontalMax:1
+
+gunBowT1IronCrossbow: SpreadDegreesVertical:3.35
+gunBowT1IronCrossbow: SpreadDegreesHorizontal:3.35
+gunBowT1IronCrossbow: KickDegreesVerticalMin:2
+gunBowT1IronCrossbow: KickDegreesVerticalMax:2
+gunBowT1IronCrossbow: KickDegreesHorizontalMin:-1
+gunBowT1IronCrossbow: KickDegreesHorizontalMax:1
+
+gunBowT3CompoundCrossbow: SpreadDegreesVertical:3.35
+gunBowT3CompoundCrossbow: SpreadDegreesHorizontal:3.35
+gunBowT3CompoundCrossbow: KickDegreesVerticalMin:2
+gunBowT3CompoundCrossbow: KickDegreesVerticalMax:2
+gunBowT3CompoundCrossbow: KickDegreesHorizontalMin:-1
+gunBowT3CompoundCrossbow: KickDegreesHorizontalMax:1
+
+gunBotT1JunkSledge: SpreadDegreesVertical:0
+gunBotT1JunkSledge: SpreadDegreesHorizontal:0
+gunBotT1JunkSledge: KickDegreesVerticalMin:-2
+gunBotT1JunkSledge: KickDegreesVerticalMax:5
+gunBotT1JunkSledge: KickDegreesHorizontalMin:-2
+gunBotT1JunkSledge: KickDegreesHorizontalMax:5
+
+gunBotT2JunkTurret: KickDegreesVerticalMin:3
+gunBotT2JunkTurret: KickDegreesVerticalMax:3
+gunBotT2JunkTurret: KickDegreesHorizontalMin:-2
+gunBotT2JunkTurret: KickDegreesHorizontalMax:2

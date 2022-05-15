@@ -323,10 +323,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Aimbot.cs" />
+    <Compile Include="Classes\ConfigHandler.cs" />
+    <Compile Include="Classes\CreateMenu.cs" />
+    <Compile Include="Classes\EspUtils.cs" />
+    <Compile Include="Classes\FreeCraft.cs" />
+    <Compile Include="Classes\SceneDebugger.cs" />
     <Compile Include="Loader.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="Esp.cs" />
+    <Compile Include="Classes\Main.cs" />
+    <Compile Include="Classes\Esp.cs" />
+    <Compile Include="Menus\BaseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\BaseMenu.Designer.cs">
+      <DependentUpon>BaseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ESPMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\ESPMenu.Designer.cs">
+      <DependentUpon>ESPMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\PlayerEditorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\PlayerEditorMenu.Designer.cs">
+      <DependentUpon>PlayerEditorMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\ItemSpawner.cs" />
+    <Compile Include="Classes\WeaponModifier.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Menus\BaseMenu.resx">
+      <DependentUpon>BaseMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\ESPMenu.resx">
+      <DependentUpon>ESPMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay.resx">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
