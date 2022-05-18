@@ -153,8 +153,8 @@ namespace _7DaysToCheat.Classes
 
                     var headPoint = _camera.WorldToScreenPoint(entityPlayer.emodel.GetHeadTransform().position);
 
-                    entityPlayer.IsFriendOfLocalPlayer = true;
-                    entityPlayer.IsInPartyOfLocalPlayer = true;
+                    //GameManager.Instance.persistentPlayers.MapPlayer(GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(entityPlayer.entityId));
+                    //Main.LocalPlayerEntity.Party.AddPlayer(entityPlayer);
 
                     if (radarEnabled)
                     {

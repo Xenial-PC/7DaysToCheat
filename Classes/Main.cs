@@ -50,6 +50,29 @@ namespace _7DaysToCheat.Classes
             /*SceneDebuggerGameObject = new GameObject();
             SceneDebuggerGameObject.AddComponent<SceneDebugger>();
             DontDestroyOnLoad(SceneDebuggerGameObject);*/
+
+            /*var zombieWaypoint = new Waypoint();
+            zombieWaypoint.name = "Test2";
+            zombieWaypoint.entityId = -1;
+            zombieWaypoint.ownerId = -1;
+            zombieWaypoint.pos = new Vector3i(new Vector3(120, 120, 120));
+            zombieWaypoint.MapObjectKey = 0;
+            zombieWaypoint.icon = "ui_game_symbol_map_fortress";
+            var waypointNavObject = new NavObject("waypoint");
+            waypointNavObject.SetupNavObjectClass("waypoint");
+            waypointNavObject.IsActive = true;
+            waypointNavObject.CurrentMapSettings.SpriteName = "ui_game_symbol_map_fortress";
+            waypointNavObject.CurrentMapSettings.IconScale = 1;
+            waypointNavObject.CurrentMapSettings.IconScaleVector = new Vector3(3, 3);
+            waypointNavObject.CurrentCompassSettings.UpSpriteName = "ui_game_symbol_map_fortress";
+            waypointNavObject.CurrentCompassSettings.Init();
+            zombieWaypoint.navObject = waypointNavObject;
+            LocalPlayerEntity.Waypoints.List.Add(zombieWaypoint);
+            new MapObjectManager().Add(new MapObject(EnumMapObjectType.MapMarker, zombieWaypoint.pos.ToVector3(), 1021, null, true));
+            */
+
+            GetAllItems.GetAllGunsRecoil();
+            //GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID()
         }
 
         public void Update()

@@ -43,6 +43,7 @@ namespace _7DaysToCheat.Menus
             this.EspColorPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.EnabledEntitesListView = new System.Windows.Forms.ListView();
+            this.EnableRadarCheckBox = new System.Windows.Forms.CheckBox();
             this.RemoveEntityButton = new System.Windows.Forms.Button();
             this.EnabledEntitiesHeaderLabel = new System.Windows.Forms.Label();
             this.EntityComboBox = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@ namespace _7DaysToCheat.Menus
             this.label2 = new System.Windows.Forms.Label();
             this.EspOptionsCheckListBox = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.EnableRadarCheckBox = new System.Windows.Forms.CheckBox();
             this.HeadPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -136,6 +136,7 @@ namespace _7DaysToCheat.Menus
             this.DisabledEntitiesListView.Size = new System.Drawing.Size(193, 157);
             this.DisabledEntitiesListView.TabIndex = 21;
             this.DisabledEntitiesListView.UseCompatibleStateImageBehavior = false;
+            this.DisabledEntitiesListView.View = System.Windows.Forms.View.List;
             // 
             // AddEntityButton
             // 
@@ -218,6 +219,20 @@ namespace _7DaysToCheat.Menus
             this.EnabledEntitesListView.Size = new System.Drawing.Size(190, 157);
             this.EnabledEntitesListView.TabIndex = 22;
             this.EnabledEntitesListView.UseCompatibleStateImageBehavior = false;
+            this.EnabledEntitesListView.View = System.Windows.Forms.View.List;
+            // 
+            // EnableRadarCheckBox
+            // 
+            this.EnableRadarCheckBox.AutoSize = true;
+            this.EnableRadarCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.EnableRadarCheckBox.ForeColor = System.Drawing.Color.White;
+            this.EnableRadarCheckBox.Location = new System.Drawing.Point(111, 181);
+            this.EnableRadarCheckBox.Name = "EnableRadarCheckBox";
+            this.EnableRadarCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EnableRadarCheckBox.Size = new System.Drawing.Size(91, 17);
+            this.EnableRadarCheckBox.TabIndex = 38;
+            this.EnableRadarCheckBox.Text = "Enable Radar";
+            this.EnableRadarCheckBox.UseVisualStyleBackColor = false;
             // 
             // RemoveEntityButton
             // 
@@ -308,7 +323,7 @@ namespace _7DaysToCheat.Menus
             this.EspOptionsCheckListBox.ForeColor = System.Drawing.Color.White;
             this.EspOptionsCheckListBox.FormattingEnabled = true;
             this.EspOptionsCheckListBox.HorizontalScrollbar = true;
-            this.EspOptionsCheckListBox.Location = new System.Drawing.Point(430, 185);
+            this.EspOptionsCheckListBox.Location = new System.Drawing.Point(431, 186);
             this.EspOptionsCheckListBox.MultiColumn = true;
             this.EspOptionsCheckListBox.Name = "EspOptionsCheckListBox";
             this.EspOptionsCheckListBox.Size = new System.Drawing.Size(134, 79);
@@ -319,24 +334,11 @@ namespace _7DaysToCheat.Menus
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(428, 168);
+            this.label3.Location = new System.Drawing.Point(428, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 35;
             this.label3.Text = "ESP Options:";
-            // 
-            // EnableRadarCheckBox
-            // 
-            this.EnableRadarCheckBox.AutoSize = true;
-            this.EnableRadarCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.EnableRadarCheckBox.ForeColor = System.Drawing.Color.White;
-            this.EnableRadarCheckBox.Location = new System.Drawing.Point(111, 181);
-            this.EnableRadarCheckBox.Name = "EnableRadarCheckBox";
-            this.EnableRadarCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EnableRadarCheckBox.Size = new System.Drawing.Size(91, 17);
-            this.EnableRadarCheckBox.TabIndex = 38;
-            this.EnableRadarCheckBox.Text = "Enable Radar";
-            this.EnableRadarCheckBox.UseVisualStyleBackColor = false;
             // 
             // ESPMenu
             // 

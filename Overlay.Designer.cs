@@ -31,6 +31,9 @@ namespace _7DaysToCheat
         {
             this.SpawnObjectLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ItemNameComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemQualityNumberBox = new System.Windows.Forms.NumericUpDown();
+            this.ItemNameLabel = new System.Windows.Forms.Label();
             this.SpawnItemsAboveHeadCheckBox = new System.Windows.Forms.CheckBox();
             this.SpawnItemButton = new System.Windows.Forms.Button();
             this.SpawnItemsAboveHeadLabel = new System.Windows.Forms.Label();
@@ -53,19 +56,18 @@ namespace _7DaysToCheat
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.ItemNameComboBox = new System.Windows.Forms.ComboBox();
-            this.ItemNameLabel = new System.Windows.Forms.Label();
-            this.ItemQualityNumberBox = new System.Windows.Forms.NumericUpDown();
+            this.IsCreativeModeEnabled = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.HeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).BeginInit();
+            this.HeadPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SpawnObjectLabel
             // 
             this.SpawnObjectLabel.AutoSize = true;
             this.SpawnObjectLabel.ForeColor = System.Drawing.Color.White;
-            this.SpawnObjectLabel.Location = new System.Drawing.Point(79, 8);
+            this.SpawnObjectLabel.Location = new System.Drawing.Point(107, 8);
             this.SpawnObjectLabel.Name = "SpawnObjectLabel";
             this.SpawnObjectLabel.Size = new System.Drawing.Size(60, 13);
             this.SpawnObjectLabel.TabIndex = 1;
@@ -74,6 +76,8 @@ namespace _7DaysToCheat
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.IsCreativeModeEnabled);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ItemNameComboBox);
             this.panel1.Controls.Add(this.ItemQualityNumberBox);
             this.panel1.Controls.Add(this.ItemNameLabel);
@@ -84,12 +88,46 @@ namespace _7DaysToCheat
             this.panel1.Controls.Add(this.ItemAmountLabel);
             this.panel1.Controls.Add(this.EnableFreeCraftingCheckBox);
             this.panel1.Controls.Add(this.ItemQualityLabel);
+            this.panel1.Controls.Add(this.EnableFOVAimbotCheckBox);
             this.panel1.Controls.Add(this.EnableFreeCraftingLabel);
+            this.panel1.Controls.Add(this.EnableFOVAimbotLabel);
             this.panel1.Controls.Add(this.SpawnObjectLabel);
-            this.panel1.Location = new System.Drawing.Point(12, 32);
+            this.panel1.Location = new System.Drawing.Point(117, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 219);
+            this.panel1.Size = new System.Drawing.Size(279, 225);
             this.panel1.TabIndex = 3;
+            // 
+            // ItemNameComboBox
+            // 
+            this.ItemNameComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ItemNameComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ItemNameComboBox.FormattingEnabled = true;
+            this.ItemNameComboBox.Location = new System.Drawing.Point(113, 36);
+            this.ItemNameComboBox.Name = "ItemNameComboBox";
+            this.ItemNameComboBox.Size = new System.Drawing.Size(151, 21);
+            this.ItemNameComboBox.TabIndex = 17;
+            // 
+            // ItemQualityNumberBox
+            // 
+            this.ItemQualityNumberBox.Location = new System.Drawing.Point(113, 63);
+            this.ItemQualityNumberBox.Name = "ItemQualityNumberBox";
+            this.ItemQualityNumberBox.Size = new System.Drawing.Size(151, 20);
+            this.ItemQualityNumberBox.TabIndex = 19;
+            this.ItemQualityNumberBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // ItemNameLabel
+            // 
+            this.ItemNameLabel.AutoSize = true;
+            this.ItemNameLabel.ForeColor = System.Drawing.Color.White;
+            this.ItemNameLabel.Location = new System.Drawing.Point(3, 39);
+            this.ItemNameLabel.Name = "ItemNameLabel";
+            this.ItemNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.ItemNameLabel.TabIndex = 18;
+            this.ItemNameLabel.Text = "ItemName:";
             // 
             // SpawnItemsAboveHeadCheckBox
             // 
@@ -105,9 +143,9 @@ namespace _7DaysToCheat
             this.SpawnItemButton.BackColor = System.Drawing.Color.Black;
             this.SpawnItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SpawnItemButton.ForeColor = System.Drawing.Color.White;
-            this.SpawnItemButton.Location = new System.Drawing.Point(32, 180);
+            this.SpawnItemButton.Location = new System.Drawing.Point(39, 180);
             this.SpawnItemButton.Name = "SpawnItemButton";
-            this.SpawnItemButton.Size = new System.Drawing.Size(167, 23);
+            this.SpawnItemButton.Size = new System.Drawing.Size(196, 23);
             this.SpawnItemButton.TabIndex = 11;
             this.SpawnItemButton.Text = "Spawn Item";
             this.SpawnItemButton.UseVisualStyleBackColor = false;
@@ -124,9 +162,9 @@ namespace _7DaysToCheat
             // 
             // ItemAmountTextBox
             // 
-            this.ItemAmountTextBox.Location = new System.Drawing.Point(113, 92);
+            this.ItemAmountTextBox.Location = new System.Drawing.Point(113, 91);
             this.ItemAmountTextBox.Name = "ItemAmountTextBox";
-            this.ItemAmountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ItemAmountTextBox.Size = new System.Drawing.Size(151, 20);
             this.ItemAmountTextBox.TabIndex = 9;
             // 
             // ItemAmountLabel
@@ -171,7 +209,7 @@ namespace _7DaysToCheat
             // EnableFOVAimbotCheckBox
             // 
             this.EnableFOVAimbotCheckBox.AutoSize = true;
-            this.EnableFOVAimbotCheckBox.Location = new System.Drawing.Point(124, 255);
+            this.EnableFOVAimbotCheckBox.Location = new System.Drawing.Point(250, 118);
             this.EnableFOVAimbotCheckBox.Name = "EnableFOVAimbotCheckBox";
             this.EnableFOVAimbotCheckBox.Size = new System.Drawing.Size(15, 14);
             this.EnableFOVAimbotCheckBox.TabIndex = 14;
@@ -182,7 +220,7 @@ namespace _7DaysToCheat
             // 
             this.EnableFOVAimbotLabel.AutoSize = true;
             this.EnableFOVAimbotLabel.ForeColor = System.Drawing.Color.White;
-            this.EnableFOVAimbotLabel.Location = new System.Drawing.Point(9, 254);
+            this.EnableFOVAimbotLabel.Location = new System.Drawing.Point(140, 118);
             this.EnableFOVAimbotLabel.Name = "EnableFOVAimbotLabel";
             this.EnableFOVAimbotLabel.Size = new System.Drawing.Size(102, 13);
             this.EnableFOVAimbotLabel.TabIndex = 13;
@@ -193,9 +231,9 @@ namespace _7DaysToCheat
             this.InjectButton.BackColor = System.Drawing.Color.Black;
             this.InjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InjectButton.ForeColor = System.Drawing.Color.White;
-            this.InjectButton.Location = new System.Drawing.Point(271, 232);
+            this.InjectButton.Location = new System.Drawing.Point(8, 234);
             this.InjectButton.Name = "InjectButton";
-            this.InjectButton.Size = new System.Drawing.Size(125, 25);
+            this.InjectButton.Size = new System.Drawing.Size(100, 25);
             this.InjectButton.TabIndex = 12;
             this.InjectButton.Text = "Inject Cheats";
             this.InjectButton.UseVisualStyleBackColor = false;
@@ -206,9 +244,9 @@ namespace _7DaysToCheat
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(271, 87);
+            this.button1.Location = new System.Drawing.Point(9, 176);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 23);
+            this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 17;
             this.button1.Text = "Player Editor";
             this.button1.UseVisualStyleBackColor = false;
@@ -264,9 +302,9 @@ namespace _7DaysToCheat
             this.EspButton.BackColor = System.Drawing.Color.Black;
             this.EspButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EspButton.ForeColor = System.Drawing.Color.White;
-            this.EspButton.Location = new System.Drawing.Point(271, 29);
+            this.EspButton.Location = new System.Drawing.Point(8, 34);
             this.EspButton.Name = "EspButton";
-            this.EspButton.Size = new System.Drawing.Size(125, 23);
+            this.EspButton.Size = new System.Drawing.Size(100, 23);
             this.EspButton.TabIndex = 19;
             this.EspButton.Text = "ESP";
             this.EspButton.UseVisualStyleBackColor = false;
@@ -277,9 +315,9 @@ namespace _7DaysToCheat
             this.button3.BackColor = System.Drawing.Color.Black;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(271, 58);
+            this.button3.Location = new System.Drawing.Point(9, 62);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 23);
+            this.button3.Size = new System.Drawing.Size(99, 23);
             this.button3.TabIndex = 20;
             this.button3.Text = "Aimbot";
             this.button3.UseVisualStyleBackColor = false;
@@ -289,9 +327,9 @@ namespace _7DaysToCheat
             this.button4.BackColor = System.Drawing.Color.Black;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(271, 116);
+            this.button4.Location = new System.Drawing.Point(9, 205);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.Size = new System.Drawing.Size(99, 23);
             this.button4.TabIndex = 21;
             this.button4.Text = "Weapon Modifier";
             this.button4.UseVisualStyleBackColor = false;
@@ -301,9 +339,9 @@ namespace _7DaysToCheat
             this.button5.BackColor = System.Drawing.Color.Black;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(271, 145);
+            this.button5.Location = new System.Drawing.Point(9, 90);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 23);
+            this.button5.Size = new System.Drawing.Size(99, 23);
             this.button5.TabIndex = 22;
             this.button5.Text = "Block Editor";
             this.button5.UseVisualStyleBackColor = false;
@@ -313,9 +351,9 @@ namespace _7DaysToCheat
             this.button6.BackColor = System.Drawing.Color.Black;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(271, 174);
+            this.button6.Location = new System.Drawing.Point(9, 118);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 23);
+            this.button6.Size = new System.Drawing.Size(99, 23);
             this.button6.TabIndex = 23;
             this.button6.Text = "Server Editor";
             this.button6.UseVisualStyleBackColor = false;
@@ -325,44 +363,32 @@ namespace _7DaysToCheat
             this.button7.BackColor = System.Drawing.Color.Black;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(271, 203);
+            this.button7.Location = new System.Drawing.Point(9, 147);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 23);
+            this.button7.Size = new System.Drawing.Size(99, 23);
             this.button7.TabIndex = 24;
             this.button7.Text = "World Editor";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // ItemNameComboBox
+            // IsCreativeModeEnabled
             // 
-            this.ItemNameComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.ItemNameComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ItemNameComboBox.FormattingEnabled = true;
-            this.ItemNameComboBox.Location = new System.Drawing.Point(6, 33);
-            this.ItemNameComboBox.Name = "ItemNameComboBox";
-            this.ItemNameComboBox.Size = new System.Drawing.Size(207, 21);
-            this.ItemNameComboBox.TabIndex = 17;
+            this.IsCreativeModeEnabled.AutoSize = true;
+            this.IsCreativeModeEnabled.Location = new System.Drawing.Point(250, 140);
+            this.IsCreativeModeEnabled.Name = "IsCreativeModeEnabled";
+            this.IsCreativeModeEnabled.Size = new System.Drawing.Size(15, 14);
+            this.IsCreativeModeEnabled.TabIndex = 21;
+            this.IsCreativeModeEnabled.UseVisualStyleBackColor = true;
+            this.IsCreativeModeEnabled.CheckedChanged += new System.EventHandler(this.IsCreativeModeEnabled_CheckedChanged);
             // 
-            // ItemNameLabel
+            // label1
             // 
-            this.ItemNameLabel.AutoSize = true;
-            this.ItemNameLabel.ForeColor = System.Drawing.Color.White;
-            this.ItemNameLabel.Location = new System.Drawing.Point(3, 17);
-            this.ItemNameLabel.Name = "ItemNameLabel";
-            this.ItemNameLabel.Size = new System.Drawing.Size(58, 13);
-            this.ItemNameLabel.TabIndex = 18;
-            this.ItemNameLabel.Text = "ItemName:";
-            // 
-            // ItemQualityNumberBox
-            // 
-            this.ItemQualityNumberBox.Location = new System.Drawing.Point(113, 63);
-            this.ItemQualityNumberBox.Name = "ItemQualityNumberBox";
-            this.ItemQualityNumberBox.Size = new System.Drawing.Size(100, 20);
-            this.ItemQualityNumberBox.TabIndex = 19;
-            this.ItemQualityNumberBox.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(140, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Enable Creative:";
             // 
             // Overlay
             // 
@@ -380,19 +406,16 @@ namespace _7DaysToCheat
             this.Controls.Add(this.HeadPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.EnableFOVAimbotCheckBox);
-            this.Controls.Add(this.EnableFOVAimbotLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Overlay";
             this.Text = "Overlay";
             this.Load += new System.EventHandler(this.Overlay_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).EndInit();
             this.HeadPanel.ResumeLayout(false);
             this.HeadPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -424,5 +447,7 @@ namespace _7DaysToCheat
         private System.Windows.Forms.Label ItemNameLabel;
         public System.Windows.Forms.ComboBox ItemNameComboBox;
         public System.Windows.Forms.NumericUpDown ItemQualityNumberBox;
+        public System.Windows.Forms.CheckBox IsCreativeModeEnabled;
+        private System.Windows.Forms.Label label1;
     }
 }

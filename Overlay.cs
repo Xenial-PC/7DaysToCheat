@@ -116,6 +116,11 @@ namespace _7DaysToCheat
             Loader.Unload();
         }
 
+        private void IsCreativeModeEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            PlayerModifer.IsCreativeMode(IsCreativeModeEnabled.Checked);
+        }
+
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
