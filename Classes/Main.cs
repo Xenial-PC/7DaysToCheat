@@ -47,31 +47,36 @@ namespace _7DaysToCheat.Classes
             WeaponGameObject.AddComponent<WeaponModifier>();
             DontDestroyOnLoad(WeaponGameObject);
 
+            AimbotGameObject = new GameObject();
+            AimbotGameObject.AddComponent<Aimbot>();
+            DontDestroyOnLoad(AimbotGameObject);
+
+            EspGameObject = new GameObject();
+            EspGameObject.AddComponent<Esp>();
+            DontDestroyOnLoad(EspGameObject);
+
+            GetAllItems.GetAllGunsRecoil();
+
             /*SceneDebuggerGameObject = new GameObject();
             SceneDebuggerGameObject.AddComponent<SceneDebugger>();
             DontDestroyOnLoad(SceneDebuggerGameObject);*/
 
-            /*var zombieWaypoint = new Waypoint();
+            /*var navObjectCopy = LocalPlayerEntity.Waypoints.List[0].navObject;
+
+            var zombieWaypoint = new Waypoint();
             zombieWaypoint.name = "Test2";
             zombieWaypoint.entityId = -1;
             zombieWaypoint.ownerId = -1;
             zombieWaypoint.pos = new Vector3i(new Vector3(120, 120, 120));
             zombieWaypoint.MapObjectKey = 0;
             zombieWaypoint.icon = "ui_game_symbol_map_fortress";
-            var waypointNavObject = new NavObject("waypoint");
+            var waypointNavObject = navObjectCopy;
             waypointNavObject.SetupNavObjectClass("waypoint");
-            waypointNavObject.IsActive = true;
-            waypointNavObject.CurrentMapSettings.SpriteName = "ui_game_symbol_map_fortress";
-            waypointNavObject.CurrentMapSettings.IconScale = 1;
-            waypointNavObject.CurrentMapSettings.IconScaleVector = new Vector3(3, 3);
-            waypointNavObject.CurrentCompassSettings.UpSpriteName = "ui_game_symbol_map_fortress";
-            waypointNavObject.CurrentCompassSettings.Init();
+            waypointNavObject.NavObjectClass.IsOnMap(true);
+            waypointNavObject.NavObjectClass.IsOnCompass(true);
             zombieWaypoint.navObject = waypointNavObject;
-            LocalPlayerEntity.Waypoints.List.Add(zombieWaypoint);
-            new MapObjectManager().Add(new MapObject(EnumMapObjectType.MapMarker, zombieWaypoint.pos.ToVector3(), 1021, null, true));
-            */
+            LocalPlayerEntity.Waypoints.List.Add(zombieWaypoint);*/
 
-            GetAllItems.GetAllGunsRecoil();
             //GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID()
         }
 
@@ -94,39 +99,6 @@ namespace _7DaysToCheat.Classes
 
             if (Input.GetKeyDown(KeyCode.End)) Loader.Unload();
             if (Input.GetKeyDown(KeyCode.Insert)) _start = !_start;
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                _isAimbotEnabled = !_isAimbotEnabled;
-                if (_isAimbotEnabled)
-                {
-                    AimbotGameObject = new GameObject();
-                    AimbotGameObject.AddComponent<Aimbot>();
-
-                    DontDestroyOnLoad(AimbotGameObject);
-                    return;
-                }
-                Destroy(AimbotGameObject);
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightAlt))
-            {
-                LocalPlayerEntity.IsAdmin = true;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Home))
-            {
-                _isEspEnabled = !_isEspEnabled;
-                if (_isEspEnabled)
-                {
-                    EspGameObject = new GameObject();
-                    EspGameObject.AddComponent<Esp>();
-
-                    DontDestroyOnLoad(EspGameObject);
-                    return;
-                }
-                Destroy(EspGameObject);
-            }
 
             if (LocalPlayerEntity is null) return;
 

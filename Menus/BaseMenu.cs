@@ -21,5 +21,17 @@ namespace _7DaysToCheat.Menus
         { 
             Hide();
         }
+
+        private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Overlay.ReleaseCapture();
+            Overlay.SendMessage(Handle, Overlay.WmNclButtonDown, Overlay.HtCaption, 0);
+        }
+
+        private void HeadPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Overlay.ReleaseCapture();
+            Overlay.SendMessage(Handle, Overlay.WmNclButtonDown, Overlay.HtCaption, 0);
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace _7DaysToCheat
         public static bool IsInitialized;
 
         [NotNull] public ESPMenu EspMenu = new ESPMenu();
+        [NotNull] public AimbotMenu AimbotMenu = new AimbotMenu();
 
         [CanBeNull]
         public static Overlay GetInstance()
@@ -46,11 +47,6 @@ namespace _7DaysToCheat
         private void InjectButton_Click(object sender, EventArgs e)
         {
             Loader.LoadCheats();
-        }
-
-        private void EnableFOVAimbotCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            Aimbot.IsFovAimbot = EnableFOVAimbotCheckBox.Checked;
         }
 
         private void EspButton_Click(object sender, EventArgs e)
@@ -104,6 +100,9 @@ namespace _7DaysToCheat
         {
             EspMenu.Show();
             EspMenu.Hide();
+
+            AimbotMenu.Show();
+            AimbotMenu.Hide();
         }
 
         private void ApplicationOnQuit()
@@ -119,6 +118,13 @@ namespace _7DaysToCheat
         private void IsCreativeModeEnabled_CheckedChanged(object sender, EventArgs e)
         {
             PlayerModifer.IsCreativeMode(IsCreativeModeEnabled.Checked);
+        }
+
+        private void AimbotButton_Click(object sender, EventArgs e)
+        {
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.Run(AimbotMenu);
         }
 
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)

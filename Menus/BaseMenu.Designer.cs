@@ -57,6 +57,7 @@ namespace _7DaysToCheat.Menus
             this.HeadPanel.Name = "HeadPanel";
             this.HeadPanel.Size = new System.Drawing.Size(415, 30);
             this.HeadPanel.TabIndex = 20;
+            this.HeadPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeadPanel_MouseDown);
             // 
             // HeaderLabel
             // 
@@ -67,6 +68,7 @@ namespace _7DaysToCheat.Menus
             this.HeaderLabel.Size = new System.Drawing.Size(34, 13);
             this.HeaderLabel.TabIndex = 19;
             this.HeaderLabel.Text = "Menu";
+            this.HeaderLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderLabel_MouseDown);
             // 
             // BaseMenu
             // 

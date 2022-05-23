@@ -37,6 +37,7 @@ namespace _7DaysToCheat.Classes
                 var customRecipe = recipe;
                 customRecipe.ingredients = new List<ItemStack>();
                 customRecipe.craftingTime = 0f;
+
                 CraftingManager.AddRecipe(customRecipe);
             }
         }

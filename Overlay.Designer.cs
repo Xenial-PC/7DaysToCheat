@@ -31,6 +31,8 @@ namespace _7DaysToCheat
         {
             this.SpawnObjectLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.IsCreativeModeEnabled = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ItemNameComboBox = new System.Windows.Forms.ComboBox();
             this.ItemQualityNumberBox = new System.Windows.Forms.NumericUpDown();
             this.ItemNameLabel = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@ namespace _7DaysToCheat
             this.EnableFreeCraftingCheckBox = new System.Windows.Forms.CheckBox();
             this.ItemQualityLabel = new System.Windows.Forms.Label();
             this.EnableFreeCraftingLabel = new System.Windows.Forms.Label();
-            this.EnableFOVAimbotCheckBox = new System.Windows.Forms.CheckBox();
-            this.EnableFOVAimbotLabel = new System.Windows.Forms.Label();
             this.InjectButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.HeadPanel = new System.Windows.Forms.Panel();
@@ -51,13 +51,11 @@ namespace _7DaysToCheat
             this.CloseButton = new System.Windows.Forms.Label();
             this.MinimizeButton = new System.Windows.Forms.Label();
             this.EspButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AimbotButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.IsCreativeModeEnabled = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).BeginInit();
             this.HeadPanel.SuspendLayout();
@@ -88,14 +86,32 @@ namespace _7DaysToCheat
             this.panel1.Controls.Add(this.ItemAmountLabel);
             this.panel1.Controls.Add(this.EnableFreeCraftingCheckBox);
             this.panel1.Controls.Add(this.ItemQualityLabel);
-            this.panel1.Controls.Add(this.EnableFOVAimbotCheckBox);
             this.panel1.Controls.Add(this.EnableFreeCraftingLabel);
-            this.panel1.Controls.Add(this.EnableFOVAimbotLabel);
             this.panel1.Controls.Add(this.SpawnObjectLabel);
             this.panel1.Location = new System.Drawing.Point(117, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 225);
             this.panel1.TabIndex = 3;
+            // 
+            // IsCreativeModeEnabled
+            // 
+            this.IsCreativeModeEnabled.AutoSize = true;
+            this.IsCreativeModeEnabled.Location = new System.Drawing.Point(251, 118);
+            this.IsCreativeModeEnabled.Name = "IsCreativeModeEnabled";
+            this.IsCreativeModeEnabled.Size = new System.Drawing.Size(15, 14);
+            this.IsCreativeModeEnabled.TabIndex = 21;
+            this.IsCreativeModeEnabled.UseVisualStyleBackColor = true;
+            this.IsCreativeModeEnabled.CheckedChanged += new System.EventHandler(this.IsCreativeModeEnabled_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(141, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Enable Creative:";
             // 
             // ItemNameComboBox
             // 
@@ -206,26 +222,6 @@ namespace _7DaysToCheat
             this.EnableFreeCraftingLabel.TabIndex = 15;
             this.EnableFreeCraftingLabel.Text = "Enable Free Craft:";
             // 
-            // EnableFOVAimbotCheckBox
-            // 
-            this.EnableFOVAimbotCheckBox.AutoSize = true;
-            this.EnableFOVAimbotCheckBox.Location = new System.Drawing.Point(250, 118);
-            this.EnableFOVAimbotCheckBox.Name = "EnableFOVAimbotCheckBox";
-            this.EnableFOVAimbotCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.EnableFOVAimbotCheckBox.TabIndex = 14;
-            this.EnableFOVAimbotCheckBox.UseVisualStyleBackColor = true;
-            this.EnableFOVAimbotCheckBox.CheckedChanged += new System.EventHandler(this.EnableFOVAimbotCheckBox_CheckedChanged);
-            // 
-            // EnableFOVAimbotLabel
-            // 
-            this.EnableFOVAimbotLabel.AutoSize = true;
-            this.EnableFOVAimbotLabel.ForeColor = System.Drawing.Color.White;
-            this.EnableFOVAimbotLabel.Location = new System.Drawing.Point(140, 118);
-            this.EnableFOVAimbotLabel.Name = "EnableFOVAimbotLabel";
-            this.EnableFOVAimbotLabel.Size = new System.Drawing.Size(102, 13);
-            this.EnableFOVAimbotLabel.TabIndex = 13;
-            this.EnableFOVAimbotLabel.Text = "Enable FOV Aimbot:";
-            // 
             // InjectButton
             // 
             this.InjectButton.BackColor = System.Drawing.Color.Black;
@@ -310,17 +306,18 @@ namespace _7DaysToCheat
             this.EspButton.UseVisualStyleBackColor = false;
             this.EspButton.Click += new System.EventHandler(this.EspButton_Click);
             // 
-            // button3
+            // AimbotButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(9, 62);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Aimbot";
-            this.button3.UseVisualStyleBackColor = false;
+            this.AimbotButton.BackColor = System.Drawing.Color.Black;
+            this.AimbotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AimbotButton.ForeColor = System.Drawing.Color.White;
+            this.AimbotButton.Location = new System.Drawing.Point(9, 62);
+            this.AimbotButton.Name = "AimbotButton";
+            this.AimbotButton.Size = new System.Drawing.Size(99, 23);
+            this.AimbotButton.TabIndex = 20;
+            this.AimbotButton.Text = "Aimbot";
+            this.AimbotButton.UseVisualStyleBackColor = false;
+            this.AimbotButton.Click += new System.EventHandler(this.AimbotButton_Click);
             // 
             // button4
             // 
@@ -370,26 +367,6 @@ namespace _7DaysToCheat
             this.button7.Text = "World Editor";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // IsCreativeModeEnabled
-            // 
-            this.IsCreativeModeEnabled.AutoSize = true;
-            this.IsCreativeModeEnabled.Location = new System.Drawing.Point(250, 140);
-            this.IsCreativeModeEnabled.Name = "IsCreativeModeEnabled";
-            this.IsCreativeModeEnabled.Size = new System.Drawing.Size(15, 14);
-            this.IsCreativeModeEnabled.TabIndex = 21;
-            this.IsCreativeModeEnabled.UseVisualStyleBackColor = true;
-            this.IsCreativeModeEnabled.CheckedChanged += new System.EventHandler(this.IsCreativeModeEnabled_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(140, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Enable Creative:";
-            // 
             // Overlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,7 +378,7 @@ namespace _7DaysToCheat
             this.Controls.Add(this.InjectButton);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.AimbotButton);
             this.Controls.Add(this.EspButton);
             this.Controls.Add(this.HeadPanel);
             this.Controls.Add(this.button1);
@@ -427,8 +404,6 @@ namespace _7DaysToCheat
         private System.Windows.Forms.Label ItemAmountLabel;
         public System.Windows.Forms.Button SpawnItemButton;
         public System.Windows.Forms.Button InjectButton;
-        private System.Windows.Forms.Label EnableFOVAimbotLabel;
-        public System.Windows.Forms.CheckBox EnableFOVAimbotCheckBox;
         public System.Windows.Forms.CheckBox SpawnItemsAboveHeadCheckBox;
         private System.Windows.Forms.Label SpawnItemsAboveHeadLabel;
         public System.Windows.Forms.CheckBox EnableFreeCraftingCheckBox;
@@ -439,7 +414,7 @@ namespace _7DaysToCheat
         private System.Windows.Forms.Label MinimizeButton;
         private System.Windows.Forms.Label HeaderLabel;
         public System.Windows.Forms.Button EspButton;
-        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button AimbotButton;
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button button5;
         public System.Windows.Forms.Button button6;

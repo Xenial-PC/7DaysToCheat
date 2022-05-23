@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using _7DaysToCheat.Menus;
 using JetBrains.Annotations;
@@ -16,7 +17,6 @@ namespace _7DaysToCheat.Classes
         private int _Color;
         private Material _chamsMaterial;
         private float _lastChamTime;
-        private CanvasGroup _radarGroup;
 
         public void Awake()
         {
@@ -64,8 +64,6 @@ namespace _7DaysToCheat.Classes
                 EspUtils.RectFilled(95, 95, 10, 10, Color.green);
             }
 
-            // Add Player To Map
-            // GameManager.Instance.persistentPlayers.MapPlayer();
             var zombieEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Zombie & Enemy Animal");
             if (zombieEspEnabled != null && zombieEspEnabled.Text == @"Zombie & Enemy Animal")
             {
@@ -152,10 +150,7 @@ namespace _7DaysToCheat.Classes
                     var vector = _camera.WorldToScreenPoint(entityPlayer.transform.position);
 
                     var headPoint = _camera.WorldToScreenPoint(entityPlayer.emodel.GetHeadTransform().position);
-
-                    //GameManager.Instance.persistentPlayers.MapPlayer(GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(entityPlayer.entityId));
-                    //Main.LocalPlayerEntity.Party.AddPlayer(entityPlayer);
-
+                    
                     if (radarEnabled)
                     {
                         var normalizePosition = NormalizePosition(Main.LocalPlayerEntity.transform.position, entityPlayer.transform.position);
@@ -165,7 +160,7 @@ namespace _7DaysToCheat.Classes
                     if (!EspUtils.IsOnScreen(vector) || !EspUtils.IsOnScreen(headPoint)) continue;
 
                     var height = Mathf.Abs(headPoint.y - vector.y);
-                    var x = vector.x - height * 0.3f;
+                    var x = vector.x - height * 0.3f; 
                     var y = Screen.height - headPoint.y;
 
                     if (vector.z <= 0f || dist > 200) continue;
