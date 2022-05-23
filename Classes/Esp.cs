@@ -64,8 +64,9 @@ namespace _7DaysToCheat.Classes
                 EspUtils.RectFilled(95, 95, 10, 10, Color.green);
             }
 
-            var zombieEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Zombie & Enemy Animal");
-            if (zombieEspEnabled != null && zombieEspEnabled.Text == @"Zombie & Enemy Animal")
+            var zombieEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Zombie");
+            var enemyAnimalEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Enemy Animal");
+            if (zombieEspEnabled != null && zombieEspEnabled.Text == @"Zombie" || enemyAnimalEspEnabled != null && enemyAnimalEspEnabled.Text == @"Enemy Animal")
             {
                 if (Time.time >= _lastZombieEspTime)
                 {
@@ -79,6 +80,12 @@ namespace _7DaysToCheat.Classes
                     if (enemy == null) continue;
                     var entityZombie = (EntityEnemy)enemy;
                     if (entityZombie.gameObject == null || entityZombie == null || entityZombie.IsDead()) continue;
+                    var entityEnemyClass = entityZombie.EntityClass.classname;
+
+                    if (zombieEspEnabled == null && entityEnemyClass.ToString() == "EntityZombie" || entityEnemyClass.ToString() == "EntityVulture")
+                        continue;
+                    if (enemyAnimalEspEnabled == null && entityEnemyClass.ToString() == "EntityEnemyAnimal")
+                        continue;
 
                     var dist = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityZombie.transform.position));
                     var vector = _camera.WorldToScreenPoint(entityZombie.transform.position);

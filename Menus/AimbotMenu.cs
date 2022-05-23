@@ -22,7 +22,8 @@ namespace _7DaysToCheat.Menus
             DisabledEntitiesListView.Items.Add("Player");
             DisabledEntitiesListView.Items.Add("Animal");
 
-            EnabledEntitesListView.Items.Add("Zombie & Enemy Animal");
+            EnabledEntitesListView.Items.Add("Zombie");
+            EnabledEntitesListView.Items.Add("Enemy Animal");
 
             InitValues();
         }

@@ -111,18 +111,21 @@ namespace _7DaysToCheat.Menus
             EspOptionsCheckListBox.Items.Add("Esp Head Circle");
             EspOptionsCheckListBox.SetItemChecked(3, true);
 
-            EntityComboBox.Items.Add("Zombie & Enemy Animal");
+            EntityComboBox.Items.Add("Zombie");
+            EntityComboBox.Items.Add("Enemy Animal");
             EntityComboBox.Items.Add("Player");
             EntityComboBox.Items.Add("Animal");
 
-            EntityComboBox.Items.Add("Zombie & Enemy Animal Chams");
+            EntityComboBox.Items.Add("Zombie");
+            EntityComboBox.Items.Add("Enemy Animal Chams");
             EntityComboBox.Items.Add("Player Chams");
             EntityComboBox.Items.Add("Animal Chams");
 
             DisabledEntitiesListView.Items.Add("Player");
             DisabledEntitiesListView.Items.Add("Animal");
 
-            EnabledEntitesListView.Items.Add("Zombie & Enemy Animal");
+            EnabledEntitesListView.Items.Add("Zombie");
+            EnabledEntitesListView.Items.Add("Enemy Animal");
         }
 
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)

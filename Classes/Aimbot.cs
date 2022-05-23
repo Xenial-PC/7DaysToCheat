@@ -52,11 +52,14 @@ namespace _7DaysToCheat.Classes
             if (!IsAimbotEnabled) return;
             if (Input.GetKeyDown(KeyCode.PageUp)) Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.SetItemChecked(1, IsFovAimbotEnabled = !IsFovAimbotEnabled);
 
+            var zombieAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Zombie");
+            var playerAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Player");
+            var animalAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Animal");
+            var enemyAnimalAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Enemy Animal");
+
             var minDistance = 99999f;
             var aimTarget = Vector2.zero;
-            var oldDist = 99999f;
-            var newDist = 0f;
-
+            
             if (Time.time >= _natNextUpdateTime)
             {
                 _natObjects = FindObjectsOfType(typeof(EntityEnemy));
@@ -68,13 +71,24 @@ namespace _7DaysToCheat.Classes
                 if (entityEnemyObj == null) continue;
                 var entityEnemy = (EntityEnemy)entityEnemyObj;
                 if (entityEnemy == null) continue;
+                var entityEnemyClass = entityEnemy.EntityClass.classname;
+
+                if (zombieAimbotEnabled == null && entityEnemyClass.ToString() == "EntityZombie" || entityEnemyClass.ToString() == "EntityVulture")
+                    continue;
+                if (playerAimbotEnabled == null && entityEnemyClass.ToString() == "EntityPlayer")
+                    continue;
+                if (animalAimbotEnabled == null && entityEnemyClass.ToString() == "EntityAnimal")
+                    continue;
+                if (enemyAnimalAimbotEnabled == null && entityEnemyClass.ToString() == "EntityEnemyAnimal")
+                    continue;
 
                 var screenPoint = _camera.WorldToScreenPoint(entityEnemy.emodel.GetHeadTransform().position);
                 if (entityEnemy.Health <= 0 || !entityEnemy.IsAlive()) continue;
 
                 if (!IsOnScreen(screenPoint)) continue;
+                _enemyDistance = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityEnemy.transform.position));
 
-                if (IsAimbotEnabled)
+                if (IsFovAimbotEnabled)
                 {
                     var dist = Math.Abs(Vector2.Distance(new Vector2(screenPoint.x, Screen.height - screenPoint.y), new Vector2(Screen.width / 2, Screen.height / 2)));
                     if (dist >= AimbotFovDistance) continue;
@@ -82,18 +96,16 @@ namespace _7DaysToCheat.Classes
 
                     minDistance = dist;
                     aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
-                    _enemyDistance = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityEnemy.transform.position));
                     CurrentSelectedEnemy = entityEnemy;
 
                     continue;
                 }
 
-                if (newDist >= oldDist || newDist >= AimbotDistance) continue;
-                oldDist = newDist;
-
-                aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
-                _enemyDistance = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityEnemy.transform.position));
-                CurrentSelectedEnemy = entityEnemy;
+                if (_enemyDistance <= AimbotDistance)
+                {
+                    aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
+                    CurrentSelectedEnemy = entityEnemy;
+                }
             }
 
             if (Input.GetKey(KeyCode.V) && aimTarget != Vector2.zero)

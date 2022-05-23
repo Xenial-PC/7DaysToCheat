@@ -305,7 +305,7 @@ namespace _7DaysToCheat.Menus
             this.Controls.Add(this.HeadPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AimbotMenu";
-            this.Text = "BaseMenu";
+            this.Text = "Aimbot Menu";
             this.Load += new System.EventHandler(this.AimbotMenu_Load);
             this.HeadPanel.ResumeLayout(false);
             this.HeadPanel.PerformLayout();
