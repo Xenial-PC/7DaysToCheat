@@ -56,6 +56,11 @@ namespace _7DaysToCheat
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.IsDebugMode = new System.Windows.Forms.CheckBox();
+            this.DebugMenuLabel = new System.Windows.Forms.Label();
+            this.IsSpawnMenu = new System.Windows.Forms.CheckBox();
+            this.EnableSpawnMenuLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).BeginInit();
             this.HeadPanel.SuspendLayout();
@@ -74,6 +79,10 @@ namespace _7DaysToCheat
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.IsSpawnMenu);
+            this.panel1.Controls.Add(this.EnableSpawnMenuLabel);
+            this.panel1.Controls.Add(this.IsDebugMode);
+            this.panel1.Controls.Add(this.DebugMenuLabel);
             this.panel1.Controls.Add(this.IsCreativeModeEnabled);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ItemNameComboBox);
@@ -90,7 +99,7 @@ namespace _7DaysToCheat
             this.panel1.Controls.Add(this.SpawnObjectLabel);
             this.panel1.Location = new System.Drawing.Point(117, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 225);
+            this.panel1.Size = new System.Drawing.Size(279, 251);
             this.panel1.TabIndex = 3;
             // 
             // IsCreativeModeEnabled
@@ -159,7 +168,7 @@ namespace _7DaysToCheat
             this.SpawnItemButton.BackColor = System.Drawing.Color.Black;
             this.SpawnItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SpawnItemButton.ForeColor = System.Drawing.Color.White;
-            this.SpawnItemButton.Location = new System.Drawing.Point(39, 180);
+            this.SpawnItemButton.Location = new System.Drawing.Point(39, 208);
             this.SpawnItemButton.Name = "SpawnItemButton";
             this.SpawnItemButton.Size = new System.Drawing.Size(196, 23);
             this.SpawnItemButton.TabIndex = 11;
@@ -227,9 +236,9 @@ namespace _7DaysToCheat
             this.InjectButton.BackColor = System.Drawing.Color.Black;
             this.InjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InjectButton.ForeColor = System.Drawing.Color.White;
-            this.InjectButton.Location = new System.Drawing.Point(8, 234);
+            this.InjectButton.Location = new System.Drawing.Point(8, 263);
             this.InjectButton.Name = "InjectButton";
-            this.InjectButton.Size = new System.Drawing.Size(100, 25);
+            this.InjectButton.Size = new System.Drawing.Size(100, 22);
             this.InjectButton.TabIndex = 12;
             this.InjectButton.Text = "Inject Cheats";
             this.InjectButton.UseVisualStyleBackColor = false;
@@ -367,12 +376,65 @@ namespace _7DaysToCheat
             this.button7.Text = "World Editor";
             this.button7.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(9, 234);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Menu Settings";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // IsDebugMode
+            // 
+            this.IsDebugMode.AutoSize = true;
+            this.IsDebugMode.Location = new System.Drawing.Point(251, 142);
+            this.IsDebugMode.Name = "IsDebugMode";
+            this.IsDebugMode.Size = new System.Drawing.Size(15, 14);
+            this.IsDebugMode.TabIndex = 23;
+            this.IsDebugMode.UseVisualStyleBackColor = true;
+            this.IsDebugMode.CheckedChanged += new System.EventHandler(this.IsDebugMode_CheckedChanged);
+            // 
+            // DebugMenuLabel
+            // 
+            this.DebugMenuLabel.AutoSize = true;
+            this.DebugMenuLabel.ForeColor = System.Drawing.Color.White;
+            this.DebugMenuLabel.Location = new System.Drawing.Point(141, 142);
+            this.DebugMenuLabel.Name = "DebugMenuLabel";
+            this.DebugMenuLabel.Size = new System.Drawing.Size(78, 13);
+            this.DebugMenuLabel.TabIndex = 22;
+            this.DebugMenuLabel.Text = "Enable Debug:";
+            // 
+            // IsSpawnMenu
+            // 
+            this.IsSpawnMenu.AutoSize = true;
+            this.IsSpawnMenu.Location = new System.Drawing.Point(251, 167);
+            this.IsSpawnMenu.Name = "IsSpawnMenu";
+            this.IsSpawnMenu.Size = new System.Drawing.Size(15, 14);
+            this.IsSpawnMenu.TabIndex = 25;
+            this.IsSpawnMenu.UseVisualStyleBackColor = true;
+            this.IsSpawnMenu.CheckedChanged += new System.EventHandler(this.IsSpawnMenu_CheckedChanged);
+            // 
+            // EnableSpawnMenuLabel
+            // 
+            this.EnableSpawnMenuLabel.AutoSize = true;
+            this.EnableSpawnMenuLabel.ForeColor = System.Drawing.Color.White;
+            this.EnableSpawnMenuLabel.Location = new System.Drawing.Point(141, 167);
+            this.EnableSpawnMenuLabel.Name = "EnableSpawnMenuLabel";
+            this.EnableSpawnMenuLabel.Size = new System.Drawing.Size(109, 13);
+            this.EnableSpawnMenuLabel.TabIndex = 24;
+            this.EnableSpawnMenuLabel.Text = "Enable Spawn Menu:";
+            // 
             // Overlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(408, 271);
+            this.ClientSize = new System.Drawing.Size(408, 295);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.InjectButton);
@@ -424,5 +486,10 @@ namespace _7DaysToCheat
         public System.Windows.Forms.NumericUpDown ItemQualityNumberBox;
         public System.Windows.Forms.CheckBox IsCreativeModeEnabled;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.CheckBox IsDebugMode;
+        private System.Windows.Forms.Label DebugMenuLabel;
+        public System.Windows.Forms.CheckBox IsSpawnMenu;
+        private System.Windows.Forms.Label EnableSpawnMenuLabel;
     }
 }

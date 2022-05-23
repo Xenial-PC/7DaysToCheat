@@ -127,6 +127,16 @@ namespace _7DaysToCheat
             Application.Run(AimbotMenu);
         }
 
+        private void IsDebugMode_CheckedChanged(object sender, EventArgs e)
+        {
+            PlayerModifer.IsDebugMode(IsDebugMode.Checked);
+        }
+
+        private void IsSpawnMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            PlayerModifer.IsSpawnWindowShowed(IsSpawnMenu.Checked);
+        }
+
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

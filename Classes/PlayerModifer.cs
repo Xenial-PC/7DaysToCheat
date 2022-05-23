@@ -29,16 +29,6 @@ namespace _7DaysToCheat.Classes
             GamePrefs.Set(EnumGamePrefs.OptionsShowCompass, isEnabled);
         }
 
-        public static void SetPlayerName(string playerName)
-        {
-            GamePrefs.Set(EnumGamePrefs.PlayerName, playerName);
-        }
-
-        public static void SetPlayerId(int id)
-        {
-            GamePrefs.Set(EnumGamePrefs.PlayerId, id);
-        }
-
         public static void SetPlayerKillingMode(bool isEnabled)
         {
             GamePrefs.Set(EnumGamePrefs.PlayerKillingMode, isEnabled);
