@@ -123,8 +123,8 @@ namespace _7DaysToCheat.Classes
 
                 if (silentAimbot)
                 {
-                    _distX /= 10;
-                    _distY /= 10;
+                    _distX /= 15;
+                    _distY /= 15;
                 }
 
                 if (rageAimbot)
@@ -140,8 +140,6 @@ namespace _7DaysToCheat.Classes
                 }
 
                 HandleMagicBullet(magicBullet, entityEnemyClass, CurrentSelectedEnemy, magicBulletBlameOthers);
-
-                //if (magicBullet || magicBulletBlameOthers) return;
                 mouse_event(0x0001, (int)_distX, (int)_distY, 0, 0);
             }
         }
