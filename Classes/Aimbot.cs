@@ -148,7 +148,7 @@ namespace _7DaysToCheat.Classes
         private void HandleMagicBullet(bool magicBullet, Type entityEnemyClass, EntityEnemy entityEnemy,
             bool magicBulletBlameOthers)
         {
-            if (magicBullet)
+            if (magicBullet && !magicBulletBlameOthers)
             {
                 var source = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Concuss);
                 if (entityEnemyClass == typeof(EntityZombie))
