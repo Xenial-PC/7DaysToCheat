@@ -193,7 +193,11 @@ namespace _7DaysToCheat.Menus
             "Enable Aimbot",
             "FOV Aimbot",
             "FOV Circle(Overlay)",
-            "Toggle FOV"});
+            "Player FOV",
+            "Silent Aimbot",
+            "Rage Aimbot",
+            "Magic Bullet",
+            "MB Blame Others"});
             this.AimbotSettingsCheckBoxList.Location = new System.Drawing.Point(428, 59);
             this.AimbotSettingsCheckBoxList.Name = "AimbotSettingsCheckBoxList";
             this.AimbotSettingsCheckBoxList.Size = new System.Drawing.Size(115, 199);

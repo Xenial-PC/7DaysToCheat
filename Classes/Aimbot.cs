@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -57,6 +58,11 @@ namespace _7DaysToCheat.Classes
             var animalAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Animal");
             var enemyAnimalAimbotEnabled = Overlay.GetInstance().AimbotMenu.EnabledEntitesListView.FindItemWithText("Enemy Animal");
 
+            var silentAimbot = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Silent Aimbot");
+            var rageAimbot = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Rage Aimbot");
+            var magicBullet = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Magic Bullet");
+            var magicBulletBlameOthers = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("MB Blame Others");
+
             var minDistance = 99999f;
             var aimTarget = Vector2.zero;
             
@@ -73,13 +79,13 @@ namespace _7DaysToCheat.Classes
                 if (entityEnemy == null) continue;
                 var entityEnemyClass = entityEnemy.EntityClass.classname;
 
-                if (zombieAimbotEnabled == null && entityEnemyClass.ToString() == "EntityZombie" || entityEnemyClass.ToString() == "EntityVulture")
+                if (zombieAimbotEnabled == null && entityEnemyClass == typeof(EntityZombie))
                     continue;
-                if (playerAimbotEnabled == null && entityEnemyClass.ToString() == "EntityPlayer")
+                if (playerAimbotEnabled == null && entityEnemyClass == typeof(EntityPlayer))
                     continue;
-                if (animalAimbotEnabled == null && entityEnemyClass.ToString() == "EntityAnimal")
+                if (animalAimbotEnabled == null && entityEnemyClass == typeof(EntityAnimal))
                     continue;
-                if (enemyAnimalAimbotEnabled == null && entityEnemyClass.ToString() == "EntityEnemyAnimal")
+                if (enemyAnimalAimbotEnabled == null && entityEnemyClass == typeof(EntityEnemyAnimal))
                     continue;
 
                 var screenPoint = _camera.WorldToScreenPoint(entityEnemy.emodel.GetHeadTransform().position);
@@ -98,6 +104,8 @@ namespace _7DaysToCheat.Classes
                     aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
                     CurrentSelectedEnemy = entityEnemy;
 
+                    HandleMagicBullet(magicBullet, entityEnemyClass, entityEnemy, magicBulletBlameOthers);
+
                     continue;
                 }
 
@@ -105,6 +113,8 @@ namespace _7DaysToCheat.Classes
                 {
                     aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
                     CurrentSelectedEnemy = entityEnemy;
+
+                    HandleMagicBullet(magicBullet, entityEnemyClass, entityEnemy, magicBulletBlameOthers);
                 }
             }
 
@@ -113,10 +123,58 @@ namespace _7DaysToCheat.Classes
                 _distX = aimTarget.x - Screen.width / 2.0f;
                 _distY = aimTarget.y - Screen.height / 2.0f;
 
-                _distX /= 5;
-                _distY /= 5;
+                if (silentAimbot)
+                {
+                    _distX /= 10;
+                    _distY /= 10;
+                }
+
+                if (rageAimbot)
+                {
+                    _distX /= 3;
+                    _distY /= 3;
+                }
+
+                if (!rageAimbot && !silentAimbot)
+                {
+                    _distX /= 5;
+                    _distY /= 5;
+                }
 
                 mouse_event(0x0001, (int)_distX, (int)_distY, 0, 0);
+            }
+        }
+
+        private void HandleMagicBullet(bool magicBullet, Type entityEnemyClass, EntityEnemy entityEnemy,
+            bool magicBulletBlameOthers)
+        {
+            if (magicBullet)
+            {
+                var source = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Concuss);
+                if (entityEnemyClass == typeof(EntityZombie))
+                    source.CreatorEntityId = Main.LocalPlayerEntity.entityId;
+
+                entityEnemy.DamageEntity(source, 100, false, 1f);
+                entityEnemy.AwardKill(Main.LocalPlayerEntity);
+                if (entityEnemyClass == typeof(EntityZombie) || entityEnemyClass == typeof(EntityAnimal) || entityEnemyClass == typeof(EntityEnemyAnimal))
+                    Main.LocalPlayerEntity.AddKillXP(entityEnemy);
+
+                return;
+            }
+
+            if (magicBulletBlameOthers)
+            {
+                var source = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Concuss);
+                if (entityEnemyClass == typeof(EntityPlayer))
+                {
+                    var randomPlayer = new System.Random();
+                    source.CreatorEntityId = randomPlayer.Next(0, GetAllPlayers().Count);
+                }
+
+                entityEnemy.DamageEntity(source, 100, false, 1f);
+                entityEnemy.AwardKill(Main.LocalPlayerEntity);
+                if (entityEnemyClass == typeof(EntityZombie) || entityEnemyClass == typeof(EntityAnimal) || entityEnemyClass == typeof(EntityEnemyAnimal))
+                    Main.LocalPlayerEntity.AddKillXP(entityEnemy);
             }
         }
 
@@ -133,6 +191,22 @@ namespace _7DaysToCheat.Classes
         public static bool IsOnScreen(Vector3 position)
         {
             return position.y > 0.01f && position.y < Screen.height - 5f && position.z > 0.01f;
+        }
+
+        private List<EntityPlayer> GetAllPlayers()
+        {
+            var playerList = new List<EntityPlayer>();
+            foreach (var playerObject in FindObjectsOfType(typeof(EntityPlayer)))
+            {
+                if (playerObject == null) continue;
+                var playerEntity = playerObject as EntityPlayer;
+                if (playerEntity == null || playerEntity.gameObject == null || playerEntity.IsDead()) continue;
+                if (playerEntity == Main.LocalPlayerEntity)
+                    continue;
+
+                playerList.Add(playerEntity);
+            }
+            return playerList;
         }
     }
 }

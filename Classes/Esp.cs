@@ -79,12 +79,12 @@ namespace _7DaysToCheat.Classes
                 {
                     if (enemy == null) continue;
                     var entityZombie = (EntityEnemy)enemy;
-                    if (entityZombie.gameObject == null || entityZombie == null || entityZombie.IsDead()) continue;
+                    if (entityZombie == null || entityZombie.gameObject == null || entityZombie.IsDead()) continue;
                     var entityEnemyClass = entityZombie.EntityClass.classname;
 
-                    if (zombieEspEnabled == null && entityEnemyClass.ToString() == "EntityZombie" || entityEnemyClass.ToString() == "EntityVulture")
+                    if (zombieEspEnabled == null && entityEnemyClass == typeof(EntityZombie))
                         continue;
-                    if (enemyAnimalEspEnabled == null && entityEnemyClass.ToString() == "EntityEnemyAnimal")
+                    if (enemyAnimalEspEnabled == null && entityEnemyClass == typeof(EntityEnemyAnimal))
                         continue;
 
                     var dist = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityZombie.transform.position));
@@ -151,7 +151,7 @@ namespace _7DaysToCheat.Classes
                 {
                     if (enemy == null) continue;
                     var entityPlayer = (EntityPlayer)enemy;
-                    if (entityPlayer.gameObject == null || entityPlayer == null || entityPlayer.IsDead()) continue;
+                    if (entityPlayer == null || entityPlayer.gameObject == null || entityPlayer.IsDead()) continue;
 
                     var dist = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityPlayer.transform.position));
                     var vector = _camera.WorldToScreenPoint(entityPlayer.transform.position);
@@ -215,7 +215,7 @@ namespace _7DaysToCheat.Classes
                 {
                     if (enemy == null) continue;
                     var entityAnimal = (EntityAnimal)enemy;
-                    if (entityAnimal.gameObject == null || entityAnimal == null || entityAnimal.IsDead()) continue;
+                    if (entityAnimal == null || entityAnimal.gameObject == null || entityAnimal.IsDead()) continue;
 
                     var dist = (int)Math.Ceiling(Vector3.Distance(Main.LocalPlayerEntity.transform.position, entityAnimal.transform.position));
                     var vector = _camera.WorldToScreenPoint(entityAnimal.transform.position);
