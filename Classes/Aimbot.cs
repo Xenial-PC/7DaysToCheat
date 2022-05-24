@@ -63,6 +63,8 @@ namespace _7DaysToCheat.Classes
             var magicBullet = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Magic Bullet");
             var magicBulletBlameOthers = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("MB Blame Others");
 
+            Type entityEnemyClass = null;
+
             var minDistance = 99999f;
             var aimTarget = Vector2.zero;
             
@@ -77,7 +79,7 @@ namespace _7DaysToCheat.Classes
                 if (entityEnemyObj == null) continue;
                 var entityEnemy = (EntityEnemy)entityEnemyObj;
                 if (entityEnemy == null) continue;
-                var entityEnemyClass = entityEnemy.EntityClass.classname;
+                entityEnemyClass = entityEnemy.EntityClass.classname;
 
                 if (zombieAimbotEnabled == null && entityEnemyClass == typeof(EntityZombie))
                     continue;
@@ -104,8 +106,6 @@ namespace _7DaysToCheat.Classes
                     aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
                     CurrentSelectedEnemy = entityEnemy;
 
-                    HandleMagicBullet(magicBullet, entityEnemyClass, entityEnemy, magicBulletBlameOthers);
-
                     continue;
                 }
 
@@ -113,8 +113,6 @@ namespace _7DaysToCheat.Classes
                 {
                     aimTarget = new Vector2(screenPoint.x, Screen.height - screenPoint.y);
                     CurrentSelectedEnemy = entityEnemy;
-
-                    HandleMagicBullet(magicBullet, entityEnemyClass, entityEnemy, magicBulletBlameOthers);
                 }
             }
 
@@ -131,8 +129,8 @@ namespace _7DaysToCheat.Classes
 
                 if (rageAimbot)
                 {
-                    _distX /= 3;
-                    _distY /= 3;
+                    _distX /= 4;
+                    _distY /= 4;
                 }
 
                 if (!rageAimbot && !silentAimbot)
@@ -141,6 +139,9 @@ namespace _7DaysToCheat.Classes
                     _distY /= 5;
                 }
 
+                HandleMagicBullet(magicBullet, entityEnemyClass, CurrentSelectedEnemy, magicBulletBlameOthers);
+
+                //if (magicBullet || magicBulletBlameOthers) return;
                 mouse_event(0x0001, (int)_distX, (int)_distY, 0, 0);
             }
         }
