@@ -29,6 +29,17 @@ namespace _7DaysToCheat.Menus
         private void AddEntityButton_Click(object sender, EventArgs e)
         {
             var selectedOption = DisabledEntitiesListView.FocusedItem;
+
+            if (selectedOption == null)
+            {
+                if (DisabledEntitiesListView.Items.Count <= 0)
+                {
+                    return;
+                }
+
+                selectedOption = DisabledEntitiesListView.Items[0];
+            }
+
             EnabledEntitesListView.Items.Add(selectedOption.Text);
             DisabledEntitiesListView.Items.Remove(selectedOption);
         }
@@ -36,6 +47,17 @@ namespace _7DaysToCheat.Menus
         private void RemoveEntityButton_Click(object sender, EventArgs e)
         {
             var selectedOption = EnabledEntitesListView.FocusedItem;
+
+            if (selectedOption == null)
+            {
+                if (EnabledEntitesListView.Items.Count <= 0)
+                {
+                    return;
+                }
+
+                selectedOption = EnabledEntitesListView.Items[0];
+            }
+
             DisabledEntitiesListView.Items.Add(selectedOption.Text);
             EnabledEntitesListView.Items.Remove(selectedOption);
         }
