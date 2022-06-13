@@ -39,9 +39,7 @@ namespace _7DaysToCheat
         {
             InitializeComponent();
             TopMost = true;
-
-            UnityEngine.Application.quitting += ApplicationOnQuit;
-            Application.ApplicationExit += OnApplicationExit;
+            ShowInTaskbar = false;
         }
 
         private void InjectButton_Click(object sender, EventArgs e)
@@ -103,16 +101,6 @@ namespace _7DaysToCheat
 
             AimbotMenu.Show();
             AimbotMenu.Hide();
-        }
-
-        private void ApplicationOnQuit()
-        {
-            Loader.Unload();
-        }
-
-        private void OnApplicationExit(object sender, EventArgs e)
-        {
-            Loader.Unload();
         }
 
         private void IsCreativeModeEnabled_CheckedChanged(object sender, EventArgs e)

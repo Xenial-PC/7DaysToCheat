@@ -13,8 +13,8 @@ namespace _7DaysToCheat.Classes
         private static Color _lastTexColor;
 
         private static Material _drawMaterial;
-        static float theta_scale = 0.01f;        //Set lower to add more points
-        static int size; //Total number of points in circle
+        static float theta_scale = 0.01f;
+        static int size;
         static float radius = 3f;
         static LineRenderer lineRenderer;
 
@@ -35,6 +35,58 @@ namespace _7DaysToCheat.Classes
             _drawMaterial.SetInt("_DstBlend", 10);
             _drawMaterial.SetInt("_Cull", 0);
             _drawMaterial.SetInt("_ZWrite", 0);
+        }
+
+        public static void ApplyWireFrame(Entity entity, Color color)
+        {
+            var wireFrameShader = new Material(ResourceHandler.WireFrameShader)
+            {
+                hideFlags = HideFlags.HideAndDontSave
+            };
+
+            var wireColor = Shader.PropertyToID("_WireColor");
+
+            var material = new Material(wireFrameShader);
+            foreach (var renderer in entity.GetComponentsInChildren<Renderer>())
+            {
+                renderer.material = material;
+                renderer.material.SetColor(wireColor, color);
+            }
+        }
+
+        public static void ApplyWireFrameToObject(GameObject @object, Color color)
+        {
+            var wireFrameShader = new Material(ResourceHandler.WireFrameShader)
+            {
+                hideFlags = HideFlags.HideAndDontSave
+            };
+            var wireColor = Shader.PropertyToID("_WireColor");
+
+            var material = new Material(wireFrameShader);
+            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+            {
+                renderer.material = material;
+                renderer.material.SetColor(wireColor, color);
+            }
+        }
+
+        public static void ApplyWeaponSkin(GameObject @object, string filename, int width, int height)
+        {
+            var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
+            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+            {
+                renderer.material.mainTexture = skin;
+            }
+        }
+
+        public static void ApplyArmSkin(GameObject @object, string filename, int width, int height)
+        {
+            var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
+            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+            {
+                if (renderer.gameObject.name.Contains("FP_ARM") || renderer.material.name == "HD_Hands")
+                    renderer.material.mainTexture = skin;
+            }
         }
 
         public static Color GetHealthColor(float health, float maxHealth)
@@ -119,21 +171,6 @@ namespace _7DaysToCheat.Classes
         public static bool IsOnScreen(Vector3 position)
         {
             return position.y > 0.01f && position.y < Screen.height - 5f && position.z > 0.01f;
-        }
-
-        public static bool IsVisible(GameObject origin, Vector3 toCheck)
-        {
-            RaycastHit hit;
-            if (Physics.Linecast(Camera.main.transform.position, toCheck, out hit))
-            {
-                if (hit.transform.name.Contains("NPC") || hit.transform.name.Contains("client")
-                || hit.transform.name == Camera.main.name || hit.transform.name == Camera.main.gameObject.name
-                || hit.transform.name == Camera.main.transform.name || hit.transform.tag.Contains("Player"))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         public static void CornerBox(Vector2 head, float width, float height, float thickness, Color color, bool outline)

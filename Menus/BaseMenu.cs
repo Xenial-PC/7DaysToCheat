@@ -15,6 +15,8 @@ namespace _7DaysToCheat.Menus
         public BaseMenu()
         {
             InitializeComponent();
+            TopMost = true;
+            ShowInTaskbar = false;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

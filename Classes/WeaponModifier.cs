@@ -19,7 +19,13 @@ namespace _7DaysToCheat.Classes
                 var currentGun = ItemClass.GetItem(currentGunName);
                 _isNoRecoilEnabled = !_isNoRecoilEnabled;
 
-                if (currentGun == null || currentGun.ItemClass == null) return;
+                var currentHeldGunModel = Main.LocalPlayerEntity.inventory.holdingItemData.model.gameObject;
+                var armsModel = Main.LocalPlayerEntity.vp_FPWeapon.WeaponModel.gameObject;
+
+                //EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"", 150, 150);
+                //EspUtils.ApplyArmSkin(armsModel, @"", 2, 2);
+
+                /*if (currentGun == null || currentGun.ItemClass == null) return;
                 foreach (var effect in from effectGroup in currentGun.ItemClass.Effects.EffectGroups
                                        from effect in effectGroup.PassiveEffects
                                        select effect)
@@ -34,7 +40,7 @@ namespace _7DaysToCheat.Classes
                             else effect.Values[i] = HandleCurrentGun(currentGunName, effect.Type);
                         }
                     }
-                }
+                }*/
             }
 
             //Main.LocalPlayerEntity.inventory.GetHoldingGun().InfiniteAmmo = _isNoRecoilEnabled;

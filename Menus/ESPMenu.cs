@@ -122,6 +122,7 @@ namespace _7DaysToCheat.Menus
             EspOptionsCheckListBox.Items.Add("Entity Health");
             EspOptionsCheckListBox.Items.Add("Entity Info");
             EspOptionsCheckListBox.Items.Add("Esp Head Circle");
+            EspOptionsCheckListBox.Items.Add("Wireframe");
             EspOptionsCheckListBox.SetItemChecked(3, true);
 
             EntityComboBox.Items.Add("Zombie");

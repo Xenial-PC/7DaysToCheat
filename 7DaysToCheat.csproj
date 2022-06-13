@@ -331,6 +331,7 @@
     <Compile Include="Classes\GetAllItems.cs" />
     <Compile Include="Classes\PlayerModifer.cs" />
     <Compile Include="Classes\RecoilValues.cs" />
+    <Compile Include="Classes\ResourceHandler.cs" />
     <Compile Include="Classes\SceneDebugger.cs" />
     <Compile Include="Classes\ServerManager.cs" />
     <Compile Include="Loader.cs" />
@@ -369,9 +370,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\ItemSpawner.cs" />
     <Compile Include="Classes\WeaponModifier.cs" />
+    <Compile Include="ResourcesFolder\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <EmbeddedResource Include="ResourcesFolder\cheatbundle.unity3d" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Menus\AimbotMenu.resx">
@@ -385,6 +392,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Overlay.resx">
       <DependentUpon>Overlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourcesFolder\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

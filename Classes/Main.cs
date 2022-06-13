@@ -23,6 +23,8 @@ namespace _7DaysToCheat.Classes
 
         public void Start()
         {
+            ResourceHandler.InitAssetBundle();
+
             Overlay.GetInstance().EspMenu.EnableEspOptionCheckBox.Checked = false;
             Overlay.GetInstance().EspMenu.EnableRadarCheckBox.Checked = false;
             Overlay.GetInstance().EspMenu.EnableChamsCheckBox.Checked = false;
@@ -84,7 +86,7 @@ namespace _7DaysToCheat.Classes
         {
             if (Input.GetKeyDown(KeyCode.Delete))
             {
-                _showMenu = !_showMenu;
+                _showMenu = _overlay.Visible;
 
                 if (_showMenu) _overlay.Show();
                 else _overlay.Hide();
