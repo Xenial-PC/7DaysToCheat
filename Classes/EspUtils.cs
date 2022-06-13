@@ -43,7 +43,6 @@ namespace _7DaysToCheat.Classes
             {
                 hideFlags = HideFlags.HideAndDontSave
             };
-
             var wireColor = Shader.PropertyToID("_WireColor");
 
             var material = new Material(wireFrameShader);
@@ -56,36 +55,57 @@ namespace _7DaysToCheat.Classes
 
         public static void ApplyWireFrameToObject(GameObject @object, Color color)
         {
-            var wireFrameShader = new Material(ResourceHandler.WireFrameShader)
+            try
             {
-                hideFlags = HideFlags.HideAndDontSave
-            };
-            var wireColor = Shader.PropertyToID("_WireColor");
+                var wireFrameShader = new Material(ResourceHandler.WireFrameShader)
+                {
+                    hideFlags = HideFlags.HideAndDontSave
+                };
+                var wireColor = Shader.PropertyToID("_WireColor");
 
-            var material = new Material(wireFrameShader);
-            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+                var material = new Material(wireFrameShader);
+                foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+                {
+                    renderer.material = material;
+                    renderer.material.SetColor(wireColor, color);
+                }
+            }
+            catch (Exception e)
             {
-                renderer.material = material;
-                renderer.material.SetColor(wireColor, color);
+                // ignore
             }
         }
 
         public static void ApplyWeaponSkin(GameObject @object, string filename, int width, int height)
         {
-            var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
-            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+            try
             {
-                renderer.material.mainTexture = skin;
+                var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
+                foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+                {
+                    renderer.material.mainTexture = skin;
+                }
+            }
+            catch (Exception e)
+            {
+                // ignore
             }
         }
 
         public static void ApplyArmSkin(GameObject @object, string filename, int width, int height)
         {
-            var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
-            foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+            try
             {
-                if (renderer.gameObject.name.Contains("FP_ARM") || renderer.material.name == "HD_Hands")
-                    renderer.material.mainTexture = skin;
+                var skin = ResourceHandler.MaterialCreator.LoadImage(filename, width, height);
+                foreach (var renderer in @object.GetComponentsInChildren<Renderer>())
+                {
+                    if (renderer.gameObject.name.Contains("FP_ARM") || renderer.material.name == "HD_Hands")
+                        renderer.material.mainTexture = skin;
+                }
+            }
+            catch (Exception e)
+            {
+                // ignore
             }
         }
 
