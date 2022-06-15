@@ -22,8 +22,8 @@ namespace _7DaysToCheat.Classes
                 var currentHeldGunModel = Main.LocalPlayerEntity.inventory.holdingItemData.model.gameObject;
                 var armsModel = Main.LocalPlayerEntity.vp_FPWeapon.WeaponModel.gameObject;
 
-                //EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"", 150, 150);
-                //EspUtils.ApplyArmSkin(armsModel, @"", 2, 2);
+                EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\NeonVoidWeaponSkin.jpg", 150, 150);
+                EspUtils.ApplyArmSkin(armsModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\SnakeSkin.jpg", 2, 2);
 
                 /*if (currentGun == null || currentGun.ItemClass == null) return;
                 foreach (var effect in from effectGroup in currentGun.ItemClass.Effects.EffectGroups

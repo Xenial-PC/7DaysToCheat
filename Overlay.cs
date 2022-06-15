@@ -23,6 +23,7 @@ namespace _7DaysToCheat
 
         [NotNull] public ESPMenu EspMenu = new ESPMenu();
         [NotNull] public AimbotMenu AimbotMenu = new AimbotMenu();
+        [NotNull] public BlockEditorMenu BlockEditor = new BlockEditorMenu();
 
         [CanBeNull]
         public static Overlay GetInstance()
@@ -101,6 +102,9 @@ namespace _7DaysToCheat
 
             AimbotMenu.Show();
             AimbotMenu.Hide();
+
+            BlockEditor.Show();
+            BlockEditor.Hide();
         }
 
         private void IsCreativeModeEnabled_CheckedChanged(object sender, EventArgs e)
@@ -123,6 +127,11 @@ namespace _7DaysToCheat
         private void IsSpawnMenu_CheckedChanged(object sender, EventArgs e)
         {
             PlayerModifer.IsSpawnWindowShowed(IsSpawnMenu.Checked);
+        }
+
+        private void BlockEditorButton_Click(object sender, EventArgs e)
+        {
+            BlockEditor.Show();
         }
 
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)

@@ -7,6 +7,7 @@ namespace _7DaysToCheat.Classes
     public class GetAllItems : ItemClass
     {
         public static List<RecoilValues> GunsList = new List<RecoilValues>();
+        public static List<BlockValues> BlockList = new List<BlockValues>();
 
         public static List<string> GetAllCurrentItems()
         {
@@ -54,6 +55,38 @@ namespace _7DaysToCheat.Classes
                     }
 
                     GunsList.Add(weapon);
+                }
+            }
+            catch (Exception e)
+            {
+                // ignore
+            }
+        }
+
+        public static void GetAllBlocks()
+        {
+            try
+            {
+                BlockList.Clear();
+                foreach (var item in ItemNames)
+                {
+                    var blockItem = GetItem(item);
+                    var isBlock = blockItem.ItemClass.IsBlock();
+                    if (!isBlock) continue;
+
+                    var block = blockItem.ItemClass.GetBlock();
+
+                    var blockValues = new BlockValues()
+                    {
+                        Block = item,
+                        BlockId = blockItem.GetItemOrBlockId(),
+                        MaxDamage = block.MaxDamage,
+                        MaxDamagePlusDowngrades = block.MaxDamagePlusDowngrades,
+                        CraftComponentTime = block.CraftComponentTime,
+                        CraftComponentExp = block.CraftComponentExp
+                    };
+
+                    BlockList.Add(blockValues);
                 }
             }
             catch (Exception e)

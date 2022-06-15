@@ -26,7 +26,7 @@ namespace _7DaysToCheat.Classes
             IsAimbotEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Enable Aimbot");
             IsFovAimbotEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("FOV Aimbot");
             IsFovCircleEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("FOV Circle(Overlay)");
-            IsToggleFovEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Toggle FOV");
+            IsToggleFovEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Player FOV");
         }
 
         public void Awake()
@@ -39,7 +39,7 @@ namespace _7DaysToCheat.Classes
             IsAimbotEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Enable Aimbot");
             IsFovAimbotEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("FOV Aimbot");
             IsFovCircleEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("FOV Circle(Overlay)");
-            IsToggleFovEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Toggle FOV");
+            IsToggleFovEnabled = Overlay.GetInstance().AimbotMenu.AimbotSettingsCheckBoxList.CheckedItems.Contains("Player FOV");
 
             if (IsToggleFovEnabled)
             {

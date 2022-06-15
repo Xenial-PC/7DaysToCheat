@@ -109,8 +109,6 @@ namespace _7DaysToCheat.Classes
                     var vector2 = GUIUtility.ScreenToGUIPoint(vector);
                     vector2.y = Screen.height - (vector2.y + 1f);
 
-                    EspUtils.ApplyWireFrame(entityZombie, Color.red);
-
                     if (Time.time >= _lastChamTime && chamsEnabled)
                     {
                         if (Aimbot.CurrentSelectedEnemy != null && entityZombie == Aimbot.CurrentSelectedEnemy) ApplyChams(entityZombie, HandleEntityChamsColor(EntityType.Zombie));
