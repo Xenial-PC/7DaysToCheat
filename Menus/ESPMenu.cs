@@ -34,7 +34,6 @@ namespace _7DaysToCheat.Menus
                 if (DisabledEntitiesListView.Items.Count <= 0) return;
                 selectedOption = DisabledEntitiesListView.Items[0];
             }
-
             EnabledEntitesListView.Items.Add(selectedOption.Text);
             DisabledEntitiesListView.Items.Remove(selectedOption);
         }
@@ -47,7 +46,6 @@ namespace _7DaysToCheat.Menus
                 if (EnabledEntitesListView.Items.Count <= 0) return;
                 selectedOption = EnabledEntitesListView.Items[0];
             }
-
             DisabledEntitiesListView.Items.Add(selectedOption.Text);
             EnabledEntitesListView.Items.Remove(selectedOption);
         }

@@ -18,7 +18,7 @@ namespace _7DaysToCheat
         public const int WmNclButtonDown = 0xA1, HtCaption = 0x2;
 
         [CanBeNull] private static Thread _overlayThread, _espMenuThread;
-        [CanBeNull] private static Overlay _instance;
+        [CanBeNull] public static Overlay OverlayInstance;
         public static bool IsInitialized;
 
         [NotNull] public ESPMenu EspMenu = new ESPMenu();
@@ -28,12 +28,12 @@ namespace _7DaysToCheat
         [CanBeNull]
         public static Overlay GetInstance()
         {
-            var creator = _instance;
+            var creator = OverlayInstance;
             if (creator != null)
             {
                 return creator;
             }
-            return (_instance = new Overlay());
+            return (OverlayInstance = new Overlay());
         }
 
         public Overlay()
@@ -102,9 +102,6 @@ namespace _7DaysToCheat
 
             AimbotMenu.Show();
             AimbotMenu.Hide();
-
-            BlockEditor.Show();
-            BlockEditor.Hide();
         }
 
         private void IsCreativeModeEnabled_CheckedChanged(object sender, EventArgs e)
@@ -131,7 +128,20 @@ namespace _7DaysToCheat
 
         private void BlockEditorButton_Click(object sender, EventArgs e)
         {
-            BlockEditor.Show();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.Run(BlockEditor);
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Loader.UnloadInGame();
+            Close();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
 
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)

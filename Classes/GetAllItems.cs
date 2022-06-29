@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using UnityEngine;
 
 namespace _7DaysToCheat.Classes
 {
@@ -18,20 +21,20 @@ namespace _7DaysToCheat.Classes
         {
             try
             {
-                foreach (var item in ItemNames)
+                foreach (var item in GetAllCurrentItems())
                 {
+                    if (!item.StartsWith("gun")) continue;
                     var itemValue = GetItem(item);
                     if (!itemValue.ItemClass.IsGun()) continue;
-                    if (itemValue.ItemClass.Name.Contains("melee")) continue;
 
                     var weapon = new RecoilValues
                     {
-                        Gun = item
+                        Gun = item,
                     };
 
                     foreach (var effect in from effectGroup in itemValue.ItemClass.Effects.EffectGroups
-                        from effect in effectGroup.PassiveEffects
-                        select effect)
+                                           from effect in effectGroup.PassiveEffects
+                                           select effect)
                     {
                         if (effect.Values?[0] == null) continue;
 
@@ -67,7 +70,7 @@ namespace _7DaysToCheat.Classes
         {
             try
             {
-                BlockList.Clear();
+                if (BlockList.Count > 0) BlockList.Clear();
                 foreach (var item in ItemNames)
                 {
                     var blockItem = GetItem(item);

@@ -47,9 +47,8 @@ namespace _7DaysToCheat.Menus
 
         private void BlockEditorMenu_Load(object sender, EventArgs e)
         {
-            if (!GameManager.Instance.gameStateManager.IsGameStarted()) return;
             GetAllItems.GetAllBlocks();
-            foreach (var blockValues in GetAllItems.BlockList) 
+            foreach (var blockValues in GetAllItems.BlockList)
                 BlockListBox.Items.Add(blockValues.Block);
         }
 

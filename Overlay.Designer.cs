@@ -57,7 +57,7 @@ namespace _7DaysToCheat
             this.EspButton = new System.Windows.Forms.Button();
             this.AimbotButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.BlockEditorButton = new System.Windows.Forms.Button();
+            this.BlockEditorMenuButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -330,6 +330,7 @@ namespace _7DaysToCheat
             this.CloseButton.Size = new System.Drawing.Size(15, 15);
             this.CloseButton.TabIndex = 0;
             this.CloseButton.Text = "X";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // MinimizeButton
             // 
@@ -341,6 +342,7 @@ namespace _7DaysToCheat
             this.MinimizeButton.Size = new System.Drawing.Size(11, 15);
             this.MinimizeButton.TabIndex = 1;
             this.MinimizeButton.Text = "-";
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // EspButton
             // 
@@ -380,18 +382,18 @@ namespace _7DaysToCheat
             this.button4.Text = "Weapon Modifier";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // BlockEditorButton
+            // BlockEditorMenuButton
             // 
-            this.BlockEditorButton.BackColor = System.Drawing.Color.Black;
-            this.BlockEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditorButton.ForeColor = System.Drawing.Color.White;
-            this.BlockEditorButton.Location = new System.Drawing.Point(9, 90);
-            this.BlockEditorButton.Name = "BlockEditorButton";
-            this.BlockEditorButton.Size = new System.Drawing.Size(99, 23);
-            this.BlockEditorButton.TabIndex = 22;
-            this.BlockEditorButton.Text = "Block Editor";
-            this.BlockEditorButton.UseVisualStyleBackColor = false;
-            this.BlockEditorButton.Click += new System.EventHandler(this.BlockEditorButton_Click);
+            this.BlockEditorMenuButton.BackColor = System.Drawing.Color.Black;
+            this.BlockEditorMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditorMenuButton.ForeColor = System.Drawing.Color.White;
+            this.BlockEditorMenuButton.Location = new System.Drawing.Point(9, 90);
+            this.BlockEditorMenuButton.Name = "BlockEditorMenuButton";
+            this.BlockEditorMenuButton.Size = new System.Drawing.Size(99, 23);
+            this.BlockEditorMenuButton.TabIndex = 22;
+            this.BlockEditorMenuButton.Text = "Block Editor";
+            this.BlockEditorMenuButton.UseVisualStyleBackColor = false;
+            this.BlockEditorMenuButton.Click += new System.EventHandler(this.BlockEditorButton_Click);
             // 
             // button6
             // 
@@ -439,7 +441,7 @@ namespace _7DaysToCheat
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.InjectButton);
-            this.Controls.Add(this.BlockEditorButton);
+            this.Controls.Add(this.BlockEditorMenuButton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.AimbotButton);
             this.Controls.Add(this.EspButton);
@@ -479,7 +481,7 @@ namespace _7DaysToCheat
         public System.Windows.Forms.Button EspButton;
         public System.Windows.Forms.Button AimbotButton;
         public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button BlockEditorButton;
+        public System.Windows.Forms.Button BlockEditorMenuButton;
         public System.Windows.Forms.Button button6;
         public System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label ItemNameLabel;

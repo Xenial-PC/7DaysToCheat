@@ -296,10 +296,10 @@ namespace _7DaysToCheat.Menus
             this.label2.ForeColor = System.Drawing.Color.Turquoise;
             this.label2.Location = new System.Drawing.Point(8, 269);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(476, 26);
+            this.label2.Size = new System.Drawing.Size(453, 26);
             this.label2.TabIndex = 38;
             this.label2.Text = "Warning: This only edits values locally, ive tried to get it to edit it globally " +
-    "but cannot find a way right \r\nnow";
+    "but cannot find a way \r\nright now";
             // 
             // BlockEditorMenu
             // 
@@ -337,7 +337,6 @@ namespace _7DaysToCheat.Menus
         private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.Panel BlockListPanel;
         private System.Windows.Forms.Label BlockListLabel;
-        private System.Windows.Forms.ListBox BlockListBox;
         private System.Windows.Forms.Panel OptionsPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label BlockHealthLabel;
@@ -353,5 +352,6 @@ namespace _7DaysToCheat.Menus
         public System.Windows.Forms.NumericUpDown BlockCraftComponentExpValue;
         public System.Windows.Forms.Button GetCurrentHeldBlockButton;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ListBox BlockListBox;
     }
 }

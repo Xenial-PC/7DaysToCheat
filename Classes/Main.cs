@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using UnityEngine;
 
 namespace _7DaysToCheat.Classes
@@ -87,7 +86,7 @@ namespace _7DaysToCheat.Classes
         {
             if (Input.GetKeyDown(KeyCode.Delete))
             {
-                _showMenu = _overlay.Visible;
+                _showMenu = !_showMenu;
 
                 if (_showMenu) _overlay.Show();
                 else _overlay.Hide();
@@ -99,20 +98,6 @@ namespace _7DaysToCheat.Classes
                 return;
             }
             IsInitialized = true;
-
-            if (Input.GetKeyDown(KeyCode.Keypad1))
-            {
-                var heldBlock = LocalPlayerEntity.inventory.holdingItemData.item.GetBlock();
-                BlockModifier.SetBlockHealthPlusDowngrades(heldBlock, 1500, 1500);
-                BlockModifier.SetBlockCraftComponentTime(heldBlock, 0);
-                BlockModifier.SetBlockCraftComponentExp(heldBlock, 1500);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Keypad2))
-            {
-                var heldBlock = LocalPlayerEntity.inventory.holdingItemData.item.GetBlock();
-                BlockModifier.ResetBlockToOriginalValues(heldBlock);
-            }
 
             if (Input.GetKeyDown(KeyCode.End)) Loader.Unload();
             if (Input.GetKeyDown(KeyCode.Insert)) _start = !_start;

@@ -22,15 +22,15 @@ namespace _7DaysToCheat.Classes
                 var currentHeldGunModel = Main.LocalPlayerEntity.inventory.holdingItemData.model.gameObject;
                 var armsModel = Main.LocalPlayerEntity.vp_FPWeapon.WeaponModel.gameObject;
 
-                EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\NeonVoidWeaponSkin.jpg", 150, 150);
-                EspUtils.ApplyArmSkin(armsModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\SnakeSkin.jpg", 2, 2);
+                /*EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\NeonVoidWeaponSkin.jpg", 150, 150);
+                EspUtils.ApplyArmSkin(armsModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\SnakeSkin.jpg", 2, 2);*/
 
-                /*if (currentGun == null || currentGun.ItemClass == null) return;
+                if (currentGun == null || currentGun.ItemClass == null) return;
                 foreach (var effect in from effectGroup in currentGun.ItemClass.Effects.EffectGroups
                                        from effect in effectGroup.PassiveEffects
                                        select effect)
                 {
-                    if (effect.Type == PassiveEffects.KickDegreesHorizontalMax || effect.Type == PassiveEffects.KickDegreesHorizontalMin 
+                    if (effect.Type == PassiveEffects.KickDegreesHorizontalMax || effect.Type == PassiveEffects.KickDegreesHorizontalMin
                     || effect.Type == PassiveEffects.KickDegreesVerticalMax || effect.Type == PassiveEffects.KickDegreesVerticalMin
                     || effect.Type == PassiveEffects.SpreadDegreesHorizontal || effect.Type == PassiveEffects.SpreadDegreesVertical)
                     {
@@ -40,7 +40,7 @@ namespace _7DaysToCheat.Classes
                             else effect.Values[i] = HandleCurrentGun(currentGunName, effect.Type);
                         }
                     }
-                }*/
+                }
             }
 
             //Main.LocalPlayerEntity.inventory.GetHoldingGun().InfiniteAmmo = _isNoRecoilEnabled;
