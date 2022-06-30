@@ -16,7 +16,7 @@ namespace _7DaysToCheat.Classes
 
         private void StartOverlayThread()
         {
-            if (_overlay.IsDisposed) Overlay.OverlayInstance = new Overlay();
+            Overlay.OverlayInstance = new Overlay();
             ResourceHandler.InitResources();
 
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);

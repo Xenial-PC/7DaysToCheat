@@ -19,6 +19,8 @@ namespace _7DaysToCheat.Classes
                 var currentGun = ItemClass.GetItem(currentGunName);
                 _isNoRecoilEnabled = !_isNoRecoilEnabled;
 
+                GetAllItems.GetHoldingGunRecoil(currentGunName);
+
                 var currentHeldGunModel = Main.LocalPlayerEntity.inventory.holdingItemData.model.gameObject;
                 var armsModel = Main.LocalPlayerEntity.vp_FPWeapon.WeaponModel.gameObject;
 

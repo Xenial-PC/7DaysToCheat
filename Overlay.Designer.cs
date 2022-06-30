@@ -49,18 +49,18 @@ namespace _7DaysToCheat
             this.ItemQualityLabel = new System.Windows.Forms.Label();
             this.EnableFreeCraftingLabel = new System.Windows.Forms.Label();
             this.InjectButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PlayerEditorButton = new System.Windows.Forms.Button();
             this.HeadPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.MinimizeButton = new System.Windows.Forms.Label();
             this.EspButton = new System.Windows.Forms.Button();
             this.AimbotButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.BlockEditorMenuButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.WeaponModifierButton = new System.Windows.Forms.Button();
+            this.BlockEditorButton = new System.Windows.Forms.Button();
+            this.ServerEditorButton = new System.Windows.Forms.Button();
+            this.WorldEditorButton = new System.Windows.Forms.Button();
+            this.MenuSettingsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).BeginInit();
             this.HeadPanel.SuspendLayout();
@@ -284,17 +284,17 @@ namespace _7DaysToCheat
             this.InjectButton.UseVisualStyleBackColor = false;
             this.InjectButton.Click += new System.EventHandler(this.InjectButton_Click);
             // 
-            // button1
+            // PlayerEditorButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(9, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Player Editor";
-            this.button1.UseVisualStyleBackColor = false;
+            this.PlayerEditorButton.BackColor = System.Drawing.Color.Black;
+            this.PlayerEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayerEditorButton.ForeColor = System.Drawing.Color.White;
+            this.PlayerEditorButton.Location = new System.Drawing.Point(9, 176);
+            this.PlayerEditorButton.Name = "PlayerEditorButton";
+            this.PlayerEditorButton.Size = new System.Drawing.Size(99, 23);
+            this.PlayerEditorButton.TabIndex = 17;
+            this.PlayerEditorButton.Text = "Player Editor";
+            this.PlayerEditorButton.UseVisualStyleBackColor = false;
             // 
             // HeadPanel
             // 
@@ -370,66 +370,66 @@ namespace _7DaysToCheat
             this.AimbotButton.UseVisualStyleBackColor = false;
             this.AimbotButton.Click += new System.EventHandler(this.AimbotButton_Click);
             // 
-            // button4
+            // WeaponModifierButton
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(9, 205);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 23);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Weapon Modifier";
-            this.button4.UseVisualStyleBackColor = false;
+            this.WeaponModifierButton.BackColor = System.Drawing.Color.Black;
+            this.WeaponModifierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WeaponModifierButton.ForeColor = System.Drawing.Color.White;
+            this.WeaponModifierButton.Location = new System.Drawing.Point(9, 205);
+            this.WeaponModifierButton.Name = "WeaponModifierButton";
+            this.WeaponModifierButton.Size = new System.Drawing.Size(99, 23);
+            this.WeaponModifierButton.TabIndex = 21;
+            this.WeaponModifierButton.Text = "Weapon Modifier";
+            this.WeaponModifierButton.UseVisualStyleBackColor = false;
             // 
-            // BlockEditorMenuButton
+            // BlockEditorButton
             // 
-            this.BlockEditorMenuButton.BackColor = System.Drawing.Color.Black;
-            this.BlockEditorMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditorMenuButton.ForeColor = System.Drawing.Color.White;
-            this.BlockEditorMenuButton.Location = new System.Drawing.Point(9, 90);
-            this.BlockEditorMenuButton.Name = "BlockEditorMenuButton";
-            this.BlockEditorMenuButton.Size = new System.Drawing.Size(99, 23);
-            this.BlockEditorMenuButton.TabIndex = 22;
-            this.BlockEditorMenuButton.Text = "Block Editor";
-            this.BlockEditorMenuButton.UseVisualStyleBackColor = false;
-            this.BlockEditorMenuButton.Click += new System.EventHandler(this.BlockEditorButton_Click);
+            this.BlockEditorButton.BackColor = System.Drawing.Color.Black;
+            this.BlockEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditorButton.ForeColor = System.Drawing.Color.White;
+            this.BlockEditorButton.Location = new System.Drawing.Point(9, 90);
+            this.BlockEditorButton.Name = "BlockEditorButton";
+            this.BlockEditorButton.Size = new System.Drawing.Size(99, 23);
+            this.BlockEditorButton.TabIndex = 22;
+            this.BlockEditorButton.Text = "Block Editor";
+            this.BlockEditorButton.UseVisualStyleBackColor = false;
+            this.BlockEditorButton.Click += new System.EventHandler(this.BlockEditorButton_Click);
             // 
-            // button6
+            // ServerEditorButton
             // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(9, 118);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 23);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Server Editor";
-            this.button6.UseVisualStyleBackColor = false;
+            this.ServerEditorButton.BackColor = System.Drawing.Color.Black;
+            this.ServerEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ServerEditorButton.ForeColor = System.Drawing.Color.White;
+            this.ServerEditorButton.Location = new System.Drawing.Point(9, 118);
+            this.ServerEditorButton.Name = "ServerEditorButton";
+            this.ServerEditorButton.Size = new System.Drawing.Size(99, 23);
+            this.ServerEditorButton.TabIndex = 23;
+            this.ServerEditorButton.Text = "Server Editor";
+            this.ServerEditorButton.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // WorldEditorButton
             // 
-            this.button7.BackColor = System.Drawing.Color.Black;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(9, 147);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 23);
-            this.button7.TabIndex = 24;
-            this.button7.Text = "World Editor";
-            this.button7.UseVisualStyleBackColor = false;
+            this.WorldEditorButton.BackColor = System.Drawing.Color.Black;
+            this.WorldEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WorldEditorButton.ForeColor = System.Drawing.Color.White;
+            this.WorldEditorButton.Location = new System.Drawing.Point(9, 147);
+            this.WorldEditorButton.Name = "WorldEditorButton";
+            this.WorldEditorButton.Size = new System.Drawing.Size(99, 23);
+            this.WorldEditorButton.TabIndex = 24;
+            this.WorldEditorButton.Text = "World Editor";
+            this.WorldEditorButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // MenuSettingsButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(9, 234);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Menu Settings";
-            this.button2.UseVisualStyleBackColor = false;
+            this.MenuSettingsButton.BackColor = System.Drawing.Color.Black;
+            this.MenuSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuSettingsButton.ForeColor = System.Drawing.Color.White;
+            this.MenuSettingsButton.Location = new System.Drawing.Point(9, 234);
+            this.MenuSettingsButton.Name = "MenuSettingsButton";
+            this.MenuSettingsButton.Size = new System.Drawing.Size(99, 23);
+            this.MenuSettingsButton.TabIndex = 25;
+            this.MenuSettingsButton.Text = "Menu Settings";
+            this.MenuSettingsButton.UseVisualStyleBackColor = false;
             // 
             // Overlay
             // 
@@ -437,16 +437,16 @@ namespace _7DaysToCheat
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(408, 295);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.MenuSettingsButton);
+            this.Controls.Add(this.WorldEditorButton);
+            this.Controls.Add(this.ServerEditorButton);
             this.Controls.Add(this.InjectButton);
-            this.Controls.Add(this.BlockEditorMenuButton);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.BlockEditorButton);
+            this.Controls.Add(this.WeaponModifierButton);
             this.Controls.Add(this.AimbotButton);
             this.Controls.Add(this.EspButton);
             this.Controls.Add(this.HeadPanel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PlayerEditorButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Overlay";
@@ -473,23 +473,23 @@ namespace _7DaysToCheat
         private System.Windows.Forms.Label SpawnItemsAboveHeadLabel;
         public System.Windows.Forms.CheckBox EnableFreeCraftingCheckBox;
         private System.Windows.Forms.Label EnableFreeCraftingLabel;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button PlayerEditorButton;
         private System.Windows.Forms.Panel HeadPanel;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label MinimizeButton;
         private System.Windows.Forms.Label HeaderLabel;
         public System.Windows.Forms.Button EspButton;
         public System.Windows.Forms.Button AimbotButton;
-        public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button BlockEditorMenuButton;
-        public System.Windows.Forms.Button button6;
-        public System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Button WeaponModifierButton;
+        public System.Windows.Forms.Button BlockEditorButton;
+        public System.Windows.Forms.Button ServerEditorButton;
+        public System.Windows.Forms.Button WorldEditorButton;
         private System.Windows.Forms.Label ItemNameLabel;
         public System.Windows.Forms.ComboBox ItemNameComboBox;
         public System.Windows.Forms.NumericUpDown ItemQualityNumberBox;
         public System.Windows.Forms.CheckBox IsCreativeModeEnabled;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button MenuSettingsButton;
         public System.Windows.Forms.CheckBox IsDebugMode;
         private System.Windows.Forms.Label DebugMenuLabel;
         public System.Windows.Forms.CheckBox IsSpawnMenu;

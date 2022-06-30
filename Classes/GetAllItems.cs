@@ -26,6 +26,7 @@ namespace _7DaysToCheat.Classes
                     if (!item.StartsWith("gun")) continue;
                     var itemValue = GetItem(item);
                     if (!itemValue.ItemClass.IsGun()) continue;
+                    if (itemValue.ItemClass.GetItemName().StartsWith("melee")) continue;
 
                     var weapon = new RecoilValues
                     {
@@ -59,6 +60,52 @@ namespace _7DaysToCheat.Classes
 
                     GunsList.Add(weapon);
                 }
+            }
+            catch (Exception e)
+            {
+                // ignore
+            }
+        }
+
+        public static void GetHoldingGunRecoil(string gunName)
+        {
+            try
+            {
+                var isGunPresent = GunsList.Any(name => name.Gun == gunName);
+                if (isGunPresent) return;
+
+                var itemValue = GetItem(gunName);
+                var weapon = new RecoilValues
+                {
+                    Gun = itemValue.ItemClass.GetItemName(),
+                };
+
+                foreach (var effect in from effectGroup in itemValue.ItemClass.Effects.EffectGroups
+                    from effect in effectGroup.PassiveEffects
+                    select effect)
+                {
+                    if (effect.Values?[0] == null) continue;
+
+                    if (effect.Type == PassiveEffects.KickDegreesHorizontalMax)
+                        weapon.KickDegreesHorizontalMax = effect.Values[0];
+
+                    if (effect.Type == PassiveEffects.KickDegreesHorizontalMin)
+                        weapon.KickDegreesHorizontalMin = effect.Values[0];
+
+                    if (effect.Type == PassiveEffects.KickDegreesVerticalMax)
+                        weapon.KickDegreesVerticalMax = effect.Values[0];
+
+                    if (effect.Type == PassiveEffects.KickDegreesVerticalMin)
+                        weapon.KickDegreesVerticalMin = effect.Values[0];
+
+                    if (effect.Type == PassiveEffects.SpreadDegreesHorizontal)
+                        weapon.SpreadDegreesHorizontal = effect.Values[0];
+
+                    if (effect.Type == PassiveEffects.SpreadDegreesVertical)
+                        weapon.SpreadDegreesVertical = effect.Values[0];
+                }
+
+                GunsList.Add(weapon);
             }
             catch (Exception e)
             {
