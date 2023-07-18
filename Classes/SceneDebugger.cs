@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     public class SceneDebugger : MonoBehaviour
     {

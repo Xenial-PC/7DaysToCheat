@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     class ConfigHandler
     {

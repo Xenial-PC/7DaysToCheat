@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     public class CreateMenu : MonoBehaviour
     {
@@ -16,7 +16,6 @@ namespace _7DaysToCheat.Classes
 
         private void StartOverlayThread()
         {
-            Overlay.OverlayInstance = new Overlay();
             ResourceHandler.InitResources();
 
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);

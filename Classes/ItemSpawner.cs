@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     internal class ItemSpawner : MonoBehaviour
     {

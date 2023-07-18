@@ -1,5 +1,5 @@
 ﻿
-namespace _7DaysToCheat
+namespace C7D2C
 {
     partial class Overlay
     {
@@ -49,7 +49,7 @@ namespace _7DaysToCheat
             this.ItemQualityLabel = new System.Windows.Forms.Label();
             this.EnableFreeCraftingLabel = new System.Windows.Forms.Label();
             this.InjectButton = new System.Windows.Forms.Button();
-            this.PlayerEditorButton = new System.Windows.Forms.Button();
+            this.ItemModifierButton = new System.Windows.Forms.Button();
             this.HeadPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
@@ -58,8 +58,8 @@ namespace _7DaysToCheat
             this.AimbotButton = new System.Windows.Forms.Button();
             this.WeaponModifierButton = new System.Windows.Forms.Button();
             this.BlockEditorButton = new System.Windows.Forms.Button();
-            this.ServerEditorButton = new System.Windows.Forms.Button();
             this.WorldEditorButton = new System.Windows.Forms.Button();
+            this.PlayerEditorButton = new System.Windows.Forms.Button();
             this.MenuSettingsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemQualityNumberBox)).BeginInit();
@@ -284,17 +284,17 @@ namespace _7DaysToCheat
             this.InjectButton.UseVisualStyleBackColor = false;
             this.InjectButton.Click += new System.EventHandler(this.InjectButton_Click);
             // 
-            // PlayerEditorButton
+            // ItemModifierButton
             // 
-            this.PlayerEditorButton.BackColor = System.Drawing.Color.Black;
-            this.PlayerEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayerEditorButton.ForeColor = System.Drawing.Color.White;
-            this.PlayerEditorButton.Location = new System.Drawing.Point(9, 176);
-            this.PlayerEditorButton.Name = "PlayerEditorButton";
-            this.PlayerEditorButton.Size = new System.Drawing.Size(99, 23);
-            this.PlayerEditorButton.TabIndex = 17;
-            this.PlayerEditorButton.Text = "Player Editor";
-            this.PlayerEditorButton.UseVisualStyleBackColor = false;
+            this.ItemModifierButton.BackColor = System.Drawing.Color.Black;
+            this.ItemModifierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemModifierButton.ForeColor = System.Drawing.Color.White;
+            this.ItemModifierButton.Location = new System.Drawing.Point(9, 176);
+            this.ItemModifierButton.Name = "ItemModifierButton";
+            this.ItemModifierButton.Size = new System.Drawing.Size(99, 23);
+            this.ItemModifierButton.TabIndex = 17;
+            this.ItemModifierButton.Text = "Item Modifier";
+            this.ItemModifierButton.UseVisualStyleBackColor = false;
             // 
             // HeadPanel
             // 
@@ -381,6 +381,7 @@ namespace _7DaysToCheat
             this.WeaponModifierButton.TabIndex = 21;
             this.WeaponModifierButton.Text = "Weapon Modifier";
             this.WeaponModifierButton.UseVisualStyleBackColor = false;
+            this.WeaponModifierButton.Click += new System.EventHandler(this.WeaponModifierButton_Click);
             // 
             // BlockEditorButton
             // 
@@ -395,29 +396,29 @@ namespace _7DaysToCheat
             this.BlockEditorButton.UseVisualStyleBackColor = false;
             this.BlockEditorButton.Click += new System.EventHandler(this.BlockEditorButton_Click);
             // 
-            // ServerEditorButton
-            // 
-            this.ServerEditorButton.BackColor = System.Drawing.Color.Black;
-            this.ServerEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ServerEditorButton.ForeColor = System.Drawing.Color.White;
-            this.ServerEditorButton.Location = new System.Drawing.Point(9, 118);
-            this.ServerEditorButton.Name = "ServerEditorButton";
-            this.ServerEditorButton.Size = new System.Drawing.Size(99, 23);
-            this.ServerEditorButton.TabIndex = 23;
-            this.ServerEditorButton.Text = "Server Editor";
-            this.ServerEditorButton.UseVisualStyleBackColor = false;
-            // 
             // WorldEditorButton
             // 
             this.WorldEditorButton.BackColor = System.Drawing.Color.Black;
             this.WorldEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WorldEditorButton.ForeColor = System.Drawing.Color.White;
-            this.WorldEditorButton.Location = new System.Drawing.Point(9, 147);
+            this.WorldEditorButton.Location = new System.Drawing.Point(9, 118);
             this.WorldEditorButton.Name = "WorldEditorButton";
             this.WorldEditorButton.Size = new System.Drawing.Size(99, 23);
-            this.WorldEditorButton.TabIndex = 24;
+            this.WorldEditorButton.TabIndex = 23;
             this.WorldEditorButton.Text = "World Editor";
             this.WorldEditorButton.UseVisualStyleBackColor = false;
+            // 
+            // PlayerEditorButton
+            // 
+            this.PlayerEditorButton.BackColor = System.Drawing.Color.Black;
+            this.PlayerEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayerEditorButton.ForeColor = System.Drawing.Color.White;
+            this.PlayerEditorButton.Location = new System.Drawing.Point(9, 147);
+            this.PlayerEditorButton.Name = "PlayerEditorButton";
+            this.PlayerEditorButton.Size = new System.Drawing.Size(99, 23);
+            this.PlayerEditorButton.TabIndex = 24;
+            this.PlayerEditorButton.Text = "Player Editor";
+            this.PlayerEditorButton.UseVisualStyleBackColor = false;
             // 
             // MenuSettingsButton
             // 
@@ -438,15 +439,15 @@ namespace _7DaysToCheat
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(408, 295);
             this.Controls.Add(this.MenuSettingsButton);
+            this.Controls.Add(this.PlayerEditorButton);
             this.Controls.Add(this.WorldEditorButton);
-            this.Controls.Add(this.ServerEditorButton);
             this.Controls.Add(this.InjectButton);
             this.Controls.Add(this.BlockEditorButton);
             this.Controls.Add(this.WeaponModifierButton);
             this.Controls.Add(this.AimbotButton);
             this.Controls.Add(this.EspButton);
             this.Controls.Add(this.HeadPanel);
-            this.Controls.Add(this.PlayerEditorButton);
+            this.Controls.Add(this.ItemModifierButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Overlay";
@@ -473,7 +474,7 @@ namespace _7DaysToCheat
         private System.Windows.Forms.Label SpawnItemsAboveHeadLabel;
         public System.Windows.Forms.CheckBox EnableFreeCraftingCheckBox;
         private System.Windows.Forms.Label EnableFreeCraftingLabel;
-        public System.Windows.Forms.Button PlayerEditorButton;
+        public System.Windows.Forms.Button ItemModifierButton;
         private System.Windows.Forms.Panel HeadPanel;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label MinimizeButton;
@@ -482,8 +483,8 @@ namespace _7DaysToCheat
         public System.Windows.Forms.Button AimbotButton;
         public System.Windows.Forms.Button WeaponModifierButton;
         public System.Windows.Forms.Button BlockEditorButton;
-        public System.Windows.Forms.Button ServerEditorButton;
         public System.Windows.Forms.Button WorldEditorButton;
+        public System.Windows.Forms.Button PlayerEditorButton;
         private System.Windows.Forms.Label ItemNameLabel;
         public System.Windows.Forms.ComboBox ItemNameComboBox;
         public System.Windows.Forms.NumericUpDown ItemQualityNumberBox;

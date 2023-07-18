@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Linq;
 using JetBrains.Annotations;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     class WeaponModifier : MonoBehaviour
     {
@@ -26,6 +26,13 @@ namespace _7DaysToCheat.Classes
 
                 /*EspUtils.ApplyWeaponSkin(currentHeldGunModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\NeonVoidWeaponSkin.jpg", 150, 150);
                 EspUtils.ApplyArmSkin(armsModel, @"F:\VSRepos\VSStudio\C#\_7DaysToCheat\ResourcesFolder\WeaponSkins\SnakeSkin.jpg", 2, 2);*/
+                
+                //PassiveEffects.MagazineSize
+                //PassiveEffects.EntityDamage
+                //PassiveEffects.BlockDamage
+                //PassiveEffects.DegradationPerUse
+                //PassiveEffects.RoundsPerMinute
+                //PassiveEffects.DamageFalloffRange
 
                 if (currentGun == null || currentGun.ItemClass == null) return;
                 foreach (var effect in from effectGroup in currentGun.ItemClass.Effects.EffectGroups
@@ -48,13 +55,43 @@ namespace _7DaysToCheat.Classes
             //Main.LocalPlayerEntity.inventory.GetHoldingGun().InfiniteAmmo = _isNoRecoilEnabled;
         }
 
-        private float HandleCurrentGun([NotNull] string currentGun, PassiveEffects effects)
+        public static void MaxMagSize()
+        {
+
+        }
+
+        public static void MaxDamage()
+        {
+
+        }
+
+        public static void MaxDurability()
+        {
+
+        }
+
+        public static void MaxRange()
+        {
+
+        }
+
+        public static void MaxFireRate()
+        {
+
+        }
+
+        public static void DisableUseTimeDamage()
+        {
+
+        }
+
+        public static float HandleCurrentGun([NotNull] string currentGun, PassiveEffects effects)
         {
             var gun = GetAllItems.GunsList[GetAllItems.GunsList.FindIndex(name => name.Gun == currentGun)];
             return HandleEffect(effects, new List<float>() { gun.KickDegreesHorizontalMax, gun.KickDegreesHorizontalMin, gun.KickDegreesVerticalMax, gun.KickDegreesVerticalMin, gun.SpreadDegreesHorizontal, gun.SpreadDegreesVertical});
         }
 
-        private float HandleEffect(PassiveEffects effects, [NotNull] List<float> valuesList)
+        public static float HandleEffect(PassiveEffects effects, [NotNull] List<float> valuesList)
         {
             switch (effects)
             {

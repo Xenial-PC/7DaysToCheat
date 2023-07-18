@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     class FreeCraft : MonoBehaviour
     {
@@ -13,6 +13,7 @@ namespace _7DaysToCheat.Classes
 
         public void Start()
         {
+            RecipesCached.Clear();
             RecipesCached.AddRange(CraftingManager.GetAllRecipes());
             Overlay.GetInstance().EnableFreeCraftingCheckBox.Click += EnableFreeCraftingCheckBox_Clicked;
         }

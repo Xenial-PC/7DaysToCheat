@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     static class EspUtils
     {

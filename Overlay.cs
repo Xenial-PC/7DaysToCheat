@@ -2,12 +2,12 @@
 using System.Windows.Forms;
 using System.Threading;
 using JetBrains.Annotations;
-using _7DaysToCheat.Classes;
 using Application = System.Windows.Forms.Application;
 using System.Runtime.InteropServices;
-using _7DaysToCheat.Menus;
+using C7D2C.Classes;
+using C7D2C.Menus;
 
-namespace _7DaysToCheat
+namespace C7D2C
 {
     public partial class Overlay : Form
     {
@@ -142,6 +142,10 @@ namespace _7DaysToCheat
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void WeaponModifierButton_Click(object sender, EventArgs e)
+        {
         }
 
         private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)

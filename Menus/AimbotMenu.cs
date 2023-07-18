@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using _7DaysToCheat.Classes;
+using C7D2C.Classes;
 
-namespace _7DaysToCheat.Menus
+namespace C7D2C.Menus
 {
     public partial class AimbotMenu : Form
     {

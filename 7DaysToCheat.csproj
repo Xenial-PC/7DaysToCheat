@@ -364,17 +364,17 @@
     <Compile Include="Menus\ESPMenu.Designer.cs">
       <DependentUpon>ESPMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\WeaponModiferMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\WeaponModiferMenu.Designer.cs">
+      <DependentUpon>WeaponModiferMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Overlay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Overlay.Designer.cs">
       <DependentUpon>Overlay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menus\PlayerEditorMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menus\PlayerEditorMenu.Designer.cs">
-      <DependentUpon>PlayerEditorMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\ItemSpawner.cs" />
@@ -395,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\ESPMenu.resx">
       <DependentUpon>ESPMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\WeaponModiferMenu.resx">
+      <DependentUpon>WeaponModiferMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overlay.resx">
       <DependentUpon>Overlay.cs</DependentUpon>

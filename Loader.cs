@@ -1,8 +1,8 @@
-﻿using _7DaysToCheat.Classes;
+﻿using C7D2C.Classes;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace _7DaysToCheat
+namespace C7D2C
 {
     public class Loader : MonoBehaviour
     {

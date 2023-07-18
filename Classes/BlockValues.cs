@@ -1,4 +1,4 @@
-﻿namespace _7DaysToCheat.Classes
+﻿namespace C7D2C.Classes
 {
     public class BlockValues
     {

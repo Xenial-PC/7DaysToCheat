@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     public class GetAllItems : ItemClass
     {
@@ -26,7 +26,6 @@ namespace _7DaysToCheat.Classes
                     if (!item.StartsWith("gun")) continue;
                     var itemValue = GetItem(item);
                     if (!itemValue.ItemClass.IsGun()) continue;
-                    if (itemValue.ItemClass.GetItemName().StartsWith("melee")) continue;
 
                     var weapon = new RecoilValues
                     {

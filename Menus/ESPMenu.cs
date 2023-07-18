@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using C7D2C.Classes;
 using JetBrains.Annotations;
 using Color = System.Drawing.Color;
 
-namespace _7DaysToCheat.Menus
+namespace C7D2C.Menus
 {
     public partial class ESPMenu : Form
     {

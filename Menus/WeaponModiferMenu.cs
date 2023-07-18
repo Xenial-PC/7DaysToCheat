@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using C7D2C.Classes;
 
 namespace C7D2C.Menus
 {
-    public partial class BaseMenu : Form
+    public partial class WeaponModiferMenu : Form
     {
-        public BaseMenu()
+        public WeaponModiferMenu()
         {
             InitializeComponent();
             TopMost = true;
             ShowInTaskbar = false;
+        }
+
+        private void WeaponModiferMenu_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using _7DaysToCheat.Menus;
+using C7D2C.Menus;
 using JetBrains.Annotations;
 using UnityEngine;
 using Screen = UnityEngine.Screen;
 
-namespace _7DaysToCheat.Classes
+namespace C7D2C.Classes
 {
     internal class Esp : MonoBehaviour
     {
@@ -43,14 +43,16 @@ namespace _7DaysToCheat.Classes
         public void OnGUI()
         {
             if (Event.current.type != EventType.Repaint) return;
-            var espBox = Overlay.GetInstance().EspMenu.EspOptionsCheckListBox.GetItemChecked(0);
-            var espCornerBox = Overlay.GetInstance().EspMenu.EspOptionsCheckListBox.GetItemChecked(1);
-            var espEntityHealth = Overlay.GetInstance().EspMenu.EspOptionsCheckListBox.GetItemChecked(2);
-            var espEntityInfo = Overlay.GetInstance().EspMenu.EspOptionsCheckListBox.GetItemChecked(3);
-            var espHeadCircle = Overlay.GetInstance().EspMenu.EspOptionsCheckListBox.GetItemChecked(4);
-            var espEnabled = Overlay.GetInstance().EspMenu.EnableEspOptionCheckBox.Checked;
-            var radarEnabled = Overlay.GetInstance().EspMenu.EnableRadarCheckBox.Checked;
-            var chamsEnabled = Overlay.GetInstance().EspMenu.EnableChamsCheckBox.Checked;
+            var espMenu = Overlay.GetInstance().EspMenu;
+
+            var espBox = espMenu.EspOptionsCheckListBox.GetItemChecked(0);
+            var espCornerBox = espMenu.EspOptionsCheckListBox.GetItemChecked(1);
+            var espEntityHealth = espMenu.EspOptionsCheckListBox.GetItemChecked(2);
+            var espEntityInfo = espMenu.EspOptionsCheckListBox.GetItemChecked(3);
+            var espHeadCircle = espMenu.EspOptionsCheckListBox.GetItemChecked(4);
+            var espEnabled = espMenu.EnableEspOptionCheckBox.Checked;
+            var radarEnabled = espMenu.EnableRadarCheckBox.Checked;
+            var chamsEnabled = espMenu.EnableChamsCheckBox.Checked;
 
             if (radarEnabled)
             {
@@ -64,8 +66,8 @@ namespace _7DaysToCheat.Classes
                 EspUtils.RectFilled(95, 95, 10, 10, Color.green);
             }
 
-            var zombieEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Zombie");
-            var enemyAnimalEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Enemy Animal");
+            var zombieEspEnabled = espMenu.EnabledEntitesListView.FindItemWithText("Zombie");
+            var enemyAnimalEspEnabled = espMenu.EnabledEntitesListView.FindItemWithText("Enemy Animal");
             if (zombieEspEnabled != null && zombieEspEnabled.Text == @"Zombie" || enemyAnimalEspEnabled != null && enemyAnimalEspEnabled.Text == @"Enemy Animal")
             {
                 if (Time.time >= _lastZombieEspTime)
@@ -137,7 +139,7 @@ namespace _7DaysToCheat.Classes
                 }
             }
 
-            var playerEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Player");
+            var playerEspEnabled = espMenu.EnabledEntitesListView.FindItemWithText("Player");
             if (playerEspEnabled != null && playerEspEnabled.Text == @"Player")
             {
                 if (Time.time >= _lastPlayerEspTime)
@@ -201,7 +203,7 @@ namespace _7DaysToCheat.Classes
                 }
             }
 
-            var animalEspEnabled = Overlay.GetInstance().EspMenu.EnabledEntitesListView.FindItemWithText("Animal");
+            var animalEspEnabled = espMenu.EnabledEntitesListView.FindItemWithText("Animal");
             if (animalEspEnabled != null && animalEspEnabled.Text == @"Animal")
             {
                 if (Time.time >= _lastAnimalEspTime)

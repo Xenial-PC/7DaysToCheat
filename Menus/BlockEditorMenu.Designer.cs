@@ -1,5 +1,5 @@
 ﻿
-namespace _7DaysToCheat.Menus
+namespace C7D2C.Menus
 {
     partial class BlockEditorMenu
     {
