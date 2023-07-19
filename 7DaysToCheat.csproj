@@ -35,10 +35,12 @@
     <Reference Include="AmplifyMotion">
       <HintPath>DLLS\AmplifyMotion.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLS\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
+    <Reference Include="Assembly-CSharp-firstpass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLS\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="AstarPathfindingProject">
